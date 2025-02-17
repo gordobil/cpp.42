@@ -17,7 +17,8 @@ FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 SRC					=	megaphone.cpp
 
-OBJ					=	$(SRC:.cpp=.o)
+OBJ_DIR				=	.objects
+OBJ					=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 #COLORS
 BLUE				=	\033[1;34m
@@ -44,13 +45,14 @@ all:				$(NAME)
 
 $(NAME):			$(OBJ)
 					@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-					@mkdir -p .objects/
-					@mv $(OBJ) .objects/
 
-%.o:				%.cpp
-					@$(CC) $(CPPFLAGS) -c -o $@ $<
+$(OBJ_DIR)/%.o:		%.cpp | $(OBJ_DIR)
+					@$(CC) $(FLAGS) -c -o $@ $<
 					@echo "\n······································ Compilation complete ·······································"
 					@echo "$$BANNER"
+
+$(OBJ_DIR):
+					@mkdir -p $(OBJ_DIR)
 
 clean:
 					@rm -f $(OBJ)
