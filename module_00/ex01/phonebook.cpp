@@ -22,6 +22,7 @@ void	PhoneBook::add_contact()
 	std::string	titles[5] = {"FIRST NAME", "LAST NAME", "NICKNAME", "PHONE NUMBER", "DARKEST SECRET"};
 	std::string	data[5];
 
+	std::cout << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << CYAN + titles[i] + ": " WHITE;
@@ -31,6 +32,7 @@ void	PhoneBook::add_contact()
 			return ;
 		}
 	}
+	std::cout << std::endl;
 
 	contacts[contact_index].update_contacts(data);
 	if (contact_index < 7)
@@ -57,11 +59,16 @@ void	PhoneBook::search_contact()
 	std::getline(std::cin, i_contact);
 
 	if (i_contact.length() > 1 || i_contact[0] < '0' || i_contact[0] > '9' || (i_contact[0] - 48 > (contact_count - 1)))
-		std::cout << RED "Error: invalid contact." WHITE << std::endl;
+		std::cout << std::endl << RED "Error: invalid contact." WHITE << std::endl;
 	else
 	{
 		i = i_contact[0] - 48;
-		std::cout << contacts[i].first_name << std::endl;
+		std::cout << std::endl;
+		std::cout << CYAN "FIRST NAME: " WHITE + contacts[i].get_first_name() << std::endl;
+		std::cout << CYAN "LAST NAME: " WHITE + contacts[i].get_last_name() << std::endl;
+		std::cout << CYAN "NICKNAME: " WHITE + contacts[i].get_nickname() << std::endl;
+		std::cout << CYAN "PHONE NUMBER: " WHITE + contacts[i].get_phone_number() << std::endl;
+		std::cout << CYAN "DARKEST SECRET: " WHITE + contacts[i].get_darkest_secret() << std::endl;
 	} 
 	std::cout << std::endl;
 }
@@ -71,6 +78,7 @@ int main(void)
 	PhoneBook	PhoneBook;
 	std::string	command;
 
+	std::cout << std::endl;
 	while(1)
 	{
 		std::cout << CYAN "¬ " WHITE;
