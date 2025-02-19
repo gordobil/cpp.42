@@ -44,6 +44,7 @@ void	PhoneBook::add_contact()
 void	PhoneBook::search_contact()
 {
 	std::string	i_contact;
+	int		i;
 
 	if (contact_count < 1){
 		std::cout << RED "Error: no contacts found." WHITE << std::endl;
@@ -58,7 +59,10 @@ void	PhoneBook::search_contact()
 	if (i_contact.length() > 1 || i_contact[0] < '0' || i_contact[0] > '9' || (i_contact[0] - 48 > (contact_count - 1)))
 		std::cout << RED "Error: invalid contact." WHITE << std::endl;
 	else
-		std::cout << "CONTACT";
+	{
+		i = i_contact[0] - 48;
+		std::cout << contacts[i].first_name << std::endl;
+	} 
 	std::cout << std::endl;
 }
 
