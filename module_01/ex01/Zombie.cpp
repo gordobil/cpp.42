@@ -14,7 +14,7 @@
 
 Zombie::Zombie(){}
 Zombie::~Zombie(){
-	std::cout << name << " died :(" << std::endl;
+	std::cout << RED << name << " died :(" << WHITE << std::endl;
 }
 
 void	Zombie::change_name(std::string new_name)
@@ -24,5 +24,5 @@ void	Zombie::change_name(std::string new_name)
 
 void	Zombie::announce(void)
 {
-	std::cout << name << ": Moar braiiiiiiinnnzzzZ!!!" << std::endl;
+	std::cout << name << ": " << CYAN << "Moar braiiiiiiinnnzzzZ!!!" << WHITE << std::endl;
 }

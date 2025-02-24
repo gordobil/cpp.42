@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 09:44:14 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/24 09:44:14 by ngordobi         ###   ########.fr       */
+/*   Created: 2025/02/24 12:51:29 by ngordobi          #+#    #+#             */
+/*   Updated: 2025/02/24 12:51:29 by ngordobi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	ZOMBIE_HPP
-#define	ZOMBIE_HPP
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
-# define CYAN	"\033[1;96m"
-# define RED	"\033[1;31m"
-# define WHITE	"\033[0m"
-
-class Zombie
+class Weapon
 {
 	private:
-		std::string	name;
+		std::string	type;
 
 	public:
-		Zombie();
-		~Zombie();
-		void		change_name(std::string new_name);
-		void		announce(void);
+		Weapon(std::string newType);
+		~Weapon();
+		std::string	getType();
+		void		setType(std::string newType);
 };
-
-Zombie* zombieHorde(int N, std::string name);
 
 #endif

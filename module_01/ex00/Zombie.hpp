@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 
+# define YELLOW	"\033[1;93m"
 # define CYAN	"\033[1;96m"
 # define RED	"\033[1;31m"
 # define WHITE	"\033[0m"
@@ -32,6 +33,7 @@ class Zombie
 		void		announce(void);
 };
 
-Zombie* zombieHorde(int N, std::string name);
+Zombie* newZombie(std::string name);
+void 	randomChump(std::string name);
 
 #endif
