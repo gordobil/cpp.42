@@ -12,5 +12,11 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(){};
+HumanA::HumanA(std::string get_name, Weapon &get_weapon):
+		name(get_name), weapon(get_weapon){};
 HumanA::~HumanA(){};
+
+void	HumanA::attack(){
+	std::cout << CYAN << name << WHITE " attacks with their " RED
+			<< weapon.getType() << WHITE << std::endl;
+}

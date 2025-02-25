@@ -18,7 +18,7 @@ Weapon::Weapon(std::string newType) {
 Weapon::~Weapon(){};
 
 std::string	Weapon::getType() {
-	return (typeREF);
+	return (type);
 }
 
 void	Weapon::setType(std::string newType) {

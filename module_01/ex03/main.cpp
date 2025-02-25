@@ -15,5 +15,18 @@
 
 int	main(void)
 {
+	Weapon weaponA = Weapon("katana");
+	HumanA ramon("Ramón", weaponA);
+		ramon.attack();
+		weaponA.setType("navaja");
+		ramon.attack();
+
+	Weapon weaponB = Weapon("chimbera");
+	HumanB emilia("Emilia");
+		emilia.setWeapon(&weaponB);
+		emilia.attack();
+		weaponB.setType("martillo");
+		emilia.attack();
+
 	return (0);
 }

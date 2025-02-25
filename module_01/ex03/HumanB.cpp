@@ -10,14 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanaB.hpp"
+#include "HumanB.hpp"
 
-HumanA::HumanB(){
-	
+HumanB::HumanB(std::string get_name){
+	name = get_name;
+};
+HumanB::~HumanB(){};
+
+void	HumanB::setWeapon(Weapon *new_weapon){
+	weapon = new_weapon;
 }
-HumanA::~HumanB(){}
 
-void	attack();
-{
-
+void	HumanB::attack(){
+	std::cout << CYAN << name << WHITE " attacks with their " RED
+			<< weapon->getType() << WHITE << std::endl;
 }

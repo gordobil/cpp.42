@@ -17,7 +17,6 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-# define YELLOW	"\033[1;93m"
 # define CYAN	"\033[1;96m"
 # define RED	"\033[1;31m"
 # define WHITE	"\033[0m"
@@ -26,10 +25,12 @@ class HumanB
 {
 	private:
 		std::string	name;
-		Weapon		weapon;
+		Weapon		*weapon;
+
 	public:
-		HumanB();
+		HumanB(std::string get_name);
 		~HumanB();
+		void	setWeapon(Weapon *new_weapon);
 		void	attack();
 };
 
