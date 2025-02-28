@@ -61,8 +61,6 @@ clean:
 
 fclean:				clean
 					@rm -f $(NAME)
-					@rm -f a
-					@rm -f b
 					@echo "$(WHITE) · $(BLUE)Executable removed.$(WHITE)\n"
 
 re:					fclean $(NAME)
