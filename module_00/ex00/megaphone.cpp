@@ -12,11 +12,14 @@
 
 #include <iostream>
 
+# define RED	"\033[1;95m"
+# define WHITE	"\033[0m"
+
 int main(int argc, char **argv)
 {
 	if (argc == 1)
 	{
-		std::cout << "* LOUD AND UNBEAREBLE FEEDBACK NOISE *" << std::endl;
+		std::cout << RED "* LOUD AND UNBEAREBLE FEEDBACK NOISE *" WHITE << std::endl;
 		return (1);
 	}
 
