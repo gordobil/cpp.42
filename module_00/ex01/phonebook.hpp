@@ -25,16 +25,16 @@
 
 class PhoneBook
 {
+	private:
+		Contact	contacts[8];
+		int		contact_count;
+		int		contact_index;
+
 	public:
 		PhoneBook();
 		~PhoneBook();
 		void	add_contact();
 		void	search_contact();
-
-	private:
-		Contact	contacts[8];
-		int		contact_count;
-		int		contact_index;
 };
 
 //UTILS
