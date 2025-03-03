@@ -14,8 +14,8 @@
 #include <string>
 #include <fstream>
 
-# define CYAN	"\033[1;96m"
-# define RED	"\033[1;31m"
+# define RED	"\033[1;95m"
+# define CYAN	"\033[1;31m"
 # define WHITE	"\033[0m"
 
 std::string	replace_line(std::string line, std::string s1, std::string s2)

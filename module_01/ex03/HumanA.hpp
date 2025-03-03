@@ -17,8 +17,8 @@
 #include <iostream>
 #include "Weapon.hpp"
 
-# define CYAN	"\033[1;96m"
-# define RED	"\033[1;31m"
+# define RED	"\033[1;95m"
+# define CYAN	"\033[1;31m"
 # define WHITE	"\033[0m"
 
 class HumanA

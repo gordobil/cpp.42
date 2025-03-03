@@ -13,7 +13,7 @@
 #include <string>
 #include <iostream>
 
-# define CYAN	"\033[1;96m"
+# define CYAN	"\033[1;31m"
 # define WHITE	"\033[0m"
 
 int main(void)
