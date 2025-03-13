@@ -73,22 +73,3 @@ void	PhoneBook::search_contact()
 	std::cout << std::endl;
 }
 
-int main(void)
-{
-	PhoneBook	PhoneBook;
-	std::string	command;
-
-	std::cout << std::endl;
-	while(1)
-	{
-		std::cout << CYAN "¬ " WHITE;
-		std::getline(std::cin, command);
-		if (command.compare("EXIT") == 0)
-			break ;
-		else if (command.compare("ADD") == 0)
-			PhoneBook.add_contact();
-		else if (command.compare("SEARCH") == 0)
-			PhoneBook.search_contact();
-	}
-	return (0);
-}

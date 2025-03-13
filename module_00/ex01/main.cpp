@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: ngordobi <ngordobi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 19:18:08 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/19 19:18:08 by ngordobi         ###   ########.fr       */
+/*   Created: 2025/03/13 13:05:04 by ngordobi          #+#    #+#             */
+/*   Updated: 2025/03/13 13:05:04 by ngordobi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,24 @@ void	print_index(Contact	contacts[8], int contact_count)
 		std::cout << std::endl;
 	}
 	std::cout << std::endl;
+}
+
+int main(void)
+{
+	PhoneBook	PhoneBook;
+	std::string	command;
+
+	std::cout << std::endl;
+	while(1)
+	{
+		std::cout << CYAN "¬ " WHITE;
+		std::getline(std::cin, command);
+		if (command.compare("EXIT") == 0)
+			break ;
+		else if (command.compare("ADD") == 0)
+			PhoneBook.add_contact();
+		else if (command.compare("SEARCH") == 0)
+			PhoneBook.search_contact();
+	}
+	return (0);
 }

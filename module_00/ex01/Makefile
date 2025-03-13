@@ -15,9 +15,9 @@ NAME				=	phonebook
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	phonebook.cpp \
+SRC					=	main.cpp \
+						phonebook.cpp \
 						contact.cpp \
-						utils.cpp \
 
 OBJ_DIR				=	.objects
 OBJ					=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
