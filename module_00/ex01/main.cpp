@@ -62,11 +62,11 @@ int main(void)
 	{
 		std::cout << CYAN "¬ " WHITE;
 		std::getline(std::cin, command);
-		if (command.compare("EXIT") == 0)
+		if (command == "EXIT")
 			break ;
-		else if (command.compare("ADD") == 0)
+		else if (command == "ADD")
 			PhoneBook.add_contact();
-		else if (command.compare("SEARCH") == 0)
+		else if (command == "SEARCH")
 			PhoneBook.search_contact();
 	}
 	std::cout << std::endl;

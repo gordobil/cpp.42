@@ -6,7 +6,7 @@
 /*   By: ngordobi <ngordobi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 16:50:26 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/03/13 13:06:00 by ngordobi         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:57:13 by ngordobi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <limits>
 #include "contact.hpp"
 
 # define RED	"\033[1;95m"
