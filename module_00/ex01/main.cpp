@@ -69,5 +69,6 @@ int main(void)
 		else if (command.compare("SEARCH") == 0)
 			PhoneBook.search_contact();
 	}
+	std::cout << std::endl;
 	return (0);
 }

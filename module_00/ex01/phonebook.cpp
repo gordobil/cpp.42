@@ -28,7 +28,7 @@ void	PhoneBook::add_contact()
 		std::cout << CYAN + titles[i] + ": " WHITE;
 		std::getline(std::cin, data[i]);
 		if (!data[i][0] || (i == 3 && num_compare(data[i]) == 1)){
-			std::cout << RED "Error: invalid " + titles[i] + "." WHITE << std::endl;
+			std::cout << std::endl << RED "Error: invalid " + titles[i] + "." WHITE << std::endl << std::endl;
 			return ;
 		}
 	}
@@ -49,7 +49,7 @@ void	PhoneBook::search_contact()
 	int		i;
 
 	if (contact_count < 1){
-		std::cout << RED "Error: no contacts found." WHITE << std::endl;
+		std::cout << std::endl << RED "Error: no contacts found." WHITE << std::endl << std::endl;
 		return ;
 	}
 
