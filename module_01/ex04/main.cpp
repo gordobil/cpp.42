@@ -33,7 +33,7 @@ std::string	replace_line(std::string line, std::string s1, std::string s2)
 		end = line.find(s1, start);
 	}
 	if (start < line.size())
-		new_line += line.substr(start, line.size());
+		replaced += line.substr(start, line.size());
 	return (replaced);
 }
 

@@ -45,7 +45,7 @@ all:				$(NAME)
 
 $(NAME):			$(OBJ)
 					@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-					@echo "\n··································· Compilation complete ····································"
+					@echo "\n·································· Compilation complete ···································"
 					@echo "$$BANNER"
 
 $(OBJ_DIR)/%.o:		%.cpp | $(OBJ_DIR)
