@@ -14,19 +14,21 @@
 #define	FIXED_HPP
 
 #include <iostream>
-#include <string>
-
-# define RED	"\033[1;95m"
-# define CYAN	"\033[1;31m"
-# define WHITE	"\033[0m"
 
 class Fixed
 {
 	private:
+	static const int	fractal;
+	int					n;
 
 	public:
 		Fixed();
+		Fixed(const Fixed &copy);
+		Fixed	&operator=(const Fixed &copy);
 		~Fixed();
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif
