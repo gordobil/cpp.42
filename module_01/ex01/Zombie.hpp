@@ -1,7 +1,8 @@
 #ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <string>
+# include <string>
+# include <iostream>
 
 # define RED	"\033[1;95m"
 # define CYAN	"\033[1;31m"
@@ -10,15 +11,15 @@
 class Zombie
 {
 	private:
-		Zombie(){};
-		~Zombie(){};
 		std::string	name;
 	
 	public:
-		void	announce(void);
-		void	rename(std::string);
-}
+		Zombie();
+		~Zombie();
+		void	announce();
+		void	rename(std::string new_name);
+};
 
 Zombie* zombieHorde(int N, std::string name);
 
-#endif
+# endif

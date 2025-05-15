@@ -2,9 +2,13 @@
 
 int	main(void)
 {
-	Zombie	*Horde = zombieHorde(5, "Joxe");
+	std::string	name = "zombie";
+	Zombie		*horde = zombieHorde(5, name);
 
-	delete Horde;
+	for (int N = 0; N < 5; N++)
+		horde[N].announce();
+
+	delete[] horde;
 
 	return (0);
 }

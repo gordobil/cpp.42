@@ -1,31 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:51:29 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/24 12:51:29 by ngordobi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
 
 #include <string>
 #include <iostream>
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+
+#define RED		"\033[1;95m"
+#define CYAN	"\033[1;31m"
+#define WHITE	"\033[0m"
 
 class Weapon
 {
 	private:
 		std::string	type;
-
+	
 	public:
-		Weapon(std::string newType);
+		Weapon(std::string wType);
 		~Weapon();
-		std::string	getType();
-		void		setType(std::string newType);
+		void				setType(std::string nType);
+		const std::string	&getType(void);
 };
 
 #endif
