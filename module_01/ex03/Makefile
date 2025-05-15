@@ -15,13 +15,10 @@ NAME				=	fight
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	main.cpp \
-						HumanA.cpp \
-						HumanB.cpp \
-						Weapon.cpp \
+SRC					=	$(shell find ./ -name "*.cpp")
 
 OBJ_DIR				=	.objects
-OBJ					=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
+OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)/%.o)
 
 #COLORS
 BLUE				=	\033[1;34m

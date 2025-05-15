@@ -1,19 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 09:44:14 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/24 09:44:14 by ngordobi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-#ifndef	ZOMBIE_HPP
-#define	ZOMBIE_HPP
-
-#include <iostream>
 #include <string>
 
 # define RED	"\033[1;95m"
@@ -23,14 +10,14 @@
 class Zombie
 {
 	private:
+		Zombie(){};
+		~Zombie(){};
 		std::string	name;
-
+	
 	public:
-		Zombie();
-		~Zombie();
-		void		change_name(std::string new_name);
-		void		announce(void);
-};
+		void	announce(void);
+		void	rename(std::string);
+}
 
 Zombie* zombieHorde(int N, std::string name);
 

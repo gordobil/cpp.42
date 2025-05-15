@@ -1,23 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 09:48:50 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/24 09:48:50 by ngordobi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Zombie.hpp"
 
-int main(void)
+int	main(void)
 {
-	Zombie	*Zombie_1 = newZombie("First");
+	Zombie	*zombie1 = newZombie("Koldo");
 
-	Zombie_1->announce();
-	randomChump("Second");
-	delete Zombie_1;
+	zombie1->announce();
+	randomChump("Patxi");
+	delete(zombie1);
+
 	return (0);
 }

@@ -1,28 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:10:38 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/24 12:10:38 by ngordobi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "Zombie.hpp"
+#include <string>
 
 Zombie::Zombie(){}
-Zombie::~Zombie(){
-	std::cout << RED << name << " died :(" << WHITE << std::endl;
+Zombie::~Zombie(){}
+
+void	Zombie::announce(void){
+	std::cout << CYAN name WHITE << " in horde." << std::endl;
 }
 
-void	Zombie::change_name(std::string new_name)
-{
+void	Zombie::rename(std::string new_name){
 	name = new_name;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << name << ": " << CYAN << "Moar braiiiiiiinnnzzzZ!!!" << WHITE << std::endl;
 }
