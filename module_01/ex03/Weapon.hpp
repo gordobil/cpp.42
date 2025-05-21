@@ -3,8 +3,6 @@
 
 #include <string>
 #include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
 
 #define RED		"\033[1;95m"
 #define CYAN	"\033[1;31m"
@@ -18,8 +16,8 @@ class Weapon
 	public:
 		Weapon(std::string wType);
 		~Weapon();
+		std::string			getType();
 		void				setType(std::string nType);
-		const std::string	&getType(void);
 };
 
 #endif
