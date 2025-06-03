@@ -1,64 +1,54 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ngordobi <ngordobi@student.42urduliz.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/28 11:47:52 by ngordobi          #+#    #+#             */
-/*   Updated: 2025/02/28 11:47:52 by ngordobi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Harl.hpp"
 
-Harl::Harl(){}
-Harl::~Harl(){}
+Harl::Harl(){};
+Harl::~Harl(){};
 
-void	Harl::debug(void)
-{
-	std::cout << RED "DEBUG" WHITE << std::endl,
-	std::cout << "Debug messages contain contextual information. They are mostly used for problem diagnosis." << std::endl << std::endl;
+void	Harl::debug(void){
+	std::cout << RED "DEBUG" WHITE << std::endl;
+	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
 }
 
-void	Harl::info(void)
-{
-	std::cout << RED "INFO" WHITE << std::endl,
-	std::cout << "These messages contain extensive information. They are helpful for tracing program execution in a production environment." << std::endl << std::endl;
+void	Harl::info(void){
+	std::cout << RED "INFO" WHITE << std:: endl;
+	std::cout << "I cannot believe adding extra bacon costs more money. You didn't put enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
+	this->debug();
 }
 
-void	Harl::warning(void)
-{
-	std::cout << RED "WARNING" WHITE << std::endl,
-	std::cout << "Warning messages indicate a potential issue in the system. However, it can be handled or ignored." << std::endl << std::endl;
+void	Harl::warning(void){
+	std::cout << RED "WARNING" WHITE << std::endl;
+	std::cout << "I think I deserve to have some extra bacon for free. I've been coming for years whereas you started working here since last month." << std::endl;
+	this->info();
 }
 
-void	Harl::error(void)
-{
-	std::cout << RED "ERROR" WHITE << std::endl,
-	std::cout << "These messages indicate an unrecoverable error has occurred. This is usually a critical issue that requires manual intervention." << std::endl << std::endl;
+void	Harl::error(void){
+	std::cout << RED "ERROR" WHITE << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	this->warning();
 }
 
 void	Harl::complain(std::string level)
 {
-	int			i;
-	std::string	all_levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string	types[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int			i = 0;
 
-	for (i = 0; i < 4; i++)
-		if (level == all_levels[i])
+	while (i < 4 && types[i] != level)
+		i++;
+
+	switch (i){
+		case 0:
+			this->debug();
 			break ;
-	switch (i)
-	{
-		case (0):
-			debug();
-		case (1):
-			info();
-		case (2):
-			warning();
-		case (3):
-			error();
+		case 1:
+			this->info();
+			break ;
+		case 2:
+			this->warning();
+			break ;
+		case 3:
+			this->error();
 			break ;
 		default:
-			std::cout << CYAN "NOPE !!" WHITE << std::endl;
+			std::cout << RED "INVALID COMMENT TYPE" WHITE << std::endl;
+			break ;
 	}
 }
