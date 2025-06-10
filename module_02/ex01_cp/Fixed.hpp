@@ -18,8 +18,8 @@
 class Fixed
 {
 	private:
-	static const int	fractal;
-	int					n;
+		static const int	fractal;
+		int					n;
 
 	public:
 		Fixed();
@@ -27,8 +27,8 @@ class Fixed
 		Fixed	&operator=(const Fixed &copy);
 		~Fixed();
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		float	toFloat( void ) const;
+		int		toInt( void ) const;
 };
 
 #endif

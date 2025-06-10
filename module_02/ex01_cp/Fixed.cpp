@@ -34,12 +34,10 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-int	Fixed::getRawBits(void) const{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (n);
+float	Fixed::toFloat(void) const{
+	return ();
 }
 
-void	Fixed::setRawBits(int const raw){
-	std::cout << "setRawBits member function called" << std::endl;
-	n = raw;
+int	Fixed::toInt(void) const{
+	return ();
 }
