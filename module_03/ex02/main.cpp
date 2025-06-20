@@ -1,18 +1,19 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap	paco("Paco");
+	FragTrap	paco("Paco");
 	std::string juan = "Juan";
 
 	paco.attack(juan);
 	paco.beRepaired(10);
 	paco.takeDamage(18);
 	paco.attack(juan);
-	paco.guardGate();
+	paco.highFivesGuys();
 	paco.takeDamage(500);
-	paco.guardGate();
+	paco.highFivesGuys();
 	paco.attack(juan);
 
 	return (0);
