@@ -4,11 +4,10 @@ NAME				=	fixed
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	main.cpp \
-						Fixed.cpp \
+SRC					=	$(shell find ./ -name "*.cpp")
 
 OBJ_DIR				=	.objects
-OBJ					=	$(SRC:%.cpp=$(OBJ_DIR)/%.o)
+OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)/%.o)
 
 #COLORS
 BLUE				=	\033[1;34m
@@ -35,7 +34,7 @@ all:				$(NAME)
 
 $(NAME):			$(OBJ)
 					@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-					@echo "\n··································· Compilation complete ····································"
+					@echo "\n·································· Compilation complete ···································"
 					@echo "$$BANNER"
 
 $(OBJ_DIR)/%.o:		%.cpp | $(OBJ_DIR)
