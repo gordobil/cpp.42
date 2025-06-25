@@ -24,7 +24,7 @@ int	main(void)
 
 	animal1->makeSound();
 	dog1->makeSound();
-	cat1->makeSound(); //will output the cat sound!
+	cat1->makeSound();
 	wrong_animal->makeSound();
 	wrong_cat->makeSound();
 	std::cout << std::endl;
