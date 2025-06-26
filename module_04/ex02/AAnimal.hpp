@@ -12,15 +12,15 @@ class AAnimal
 	public:
 		AAnimal();
 		AAnimal(const AAnimal &copy);
-		AAnimal		&operator=(const AAnimal &copy);
+		AAnimal			&operator=(const AAnimal &copy);
 		virtual ~AAnimal();
 	
 		//FUNCTIONS
-		std::string	getType()const;
-		virtual void		makeSound()const;
+		std::string		getType()const;
+		virtual void	makeSound()const = 0;
 	
 	protected:
-		std::string	type;
+		std::string		type;
 };
 
 #endif

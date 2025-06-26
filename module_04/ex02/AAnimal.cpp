@@ -1,7 +1,7 @@
 
 #include "AAnimal.hpp"
 
-Animal::AAnimal(){
+AAnimal::AAnimal(){
 	std::cout << "AAnimal default constructor called." << std::endl;
 	type = "Default";
 }
