@@ -12,15 +12,15 @@ class Animal
 	public:
 		Animal();
 		Animal(const Animal &copy);
-		Animal		&operator=(const Animal &copy);
+		Animal			&operator=(const Animal &copy);
 		virtual ~Animal();
 	
 		//FUNCTIONS
-		std::string	getType()const;
-		virtual void		makeSound()const;
+		std::string		getType()const;
+		virtual void	makeSound()const;
 	
 	protected:
-		std::string	type;
+		std::string		type;
 };
 
 #endif

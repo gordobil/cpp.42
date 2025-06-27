@@ -1,5 +1,5 @@
 
-#ifndef AAnimal_HPP
+#ifndef AANIMAL_HPP
 #define AANIMAL_HPP
 
 #include <string>
@@ -13,12 +13,12 @@ class AAnimal
 		AAnimal();
 		AAnimal(const AAnimal &copy);
 		AAnimal			&operator=(const AAnimal &copy);
-		virtual ~AAnimal();
-	
+		virtual	~AAnimal();
+
 		//FUNCTIONS
 		std::string		getType()const;
 		virtual void	makeSound()const = 0;
-	
+
 	protected:
 		std::string		type;
 };

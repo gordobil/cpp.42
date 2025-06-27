@@ -8,7 +8,7 @@
 
 int	main(void)
 {
-	int					n = 10;
+	int					n = 4;
 	const AAnimal		*animals[n];
 
 	for (int i = 0; i < (n / 2); i++)
