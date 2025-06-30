@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(){}
+Fixed::Fixed() : n(0) {}
 
 Fixed::Fixed(const Fixed &copy){
 	*this = copy;
