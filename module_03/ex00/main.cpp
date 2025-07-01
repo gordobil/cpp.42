@@ -2,21 +2,21 @@
 
 int	main(void)
 {
-	ClapTrap	paco("Paco");
-	std::string juan = "Juan";
+	ClapTrap	a("A");
+	std::string b = "B";
 
-	paco.attack(juan);
-    paco.takeDamage(8);
-    paco.beRepaired(16);
+	a.attack(b);
+    a.takeDamage(8);
+    a.beRepaired(16);
     for (int i = 0; i < 9; i++){
-    	paco.attack(juan);}
-	paco.beRepaired(6);
-    paco.attack(juan);
-    paco.takeDamage(1);
-	paco.attack(juan);
-    paco.takeDamage(100);
-    paco.beRepaired(8);
-	paco.attack(juan);
+    	a.attack(b);}
+	a.beRepaired(6);
+    a.attack(b);
+    a.takeDamage(1);
+	a.attack(b);
+    a.takeDamage(100);
+    a.beRepaired(8);
+	a.attack(b);
 
 	return (0);
 }

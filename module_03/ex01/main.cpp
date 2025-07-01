@@ -3,17 +3,17 @@
 
 int	main(void)
 {
-	ScavTrap	paco("Paco");
-	std::string juan = "Juan";
+	ScavTrap	a("A");
+	std::string b = "B";
 
-	paco.attack(juan);
-	paco.beRepaired(10);
-	paco.takeDamage(18);
-	paco.attack(juan);
-	paco.guardGate();
-	paco.takeDamage(500);
-	paco.guardGate();
-	paco.attack(juan);
+	a.attack(b);
+	a.beRepaired(10);
+	a.takeDamage(18);
+	a.attack(b);
+	a.guardGate();
+	a.takeDamage(500);
+	a.guardGate();
+	a.attack(b);
 
 	return (0);
 }

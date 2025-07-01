@@ -50,7 +50,7 @@ void	ScavTrap::attack(const std::string &target){
 		std::cout << "ScavTrap " << getName() << "'s too tired to attack." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing them " << getAttackDamage() << " damage points." << std::endl;
+	std::cout << "ScavTrap " << getName() << " attacks ScavTrap " << target << ", causing them " << getAttackDamage() << " damage points." << std::endl;
 	if (getEnergyPoints() > 1){
 		setEnergyPoints(getEnergyPoints() - 1);
 		std::cout << "ScavTrap " << getName() << " now has " << getEnergyPoints() << " energy points." << std::endl;

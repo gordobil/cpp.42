@@ -4,17 +4,17 @@
 
 int	main(void)
 {
-	FragTrap	paco("Paco");
-	std::string juan = "Juan";
+	FragTrap	a("A");
+	std::string b = "B";
 
-	paco.attack(juan);
-	paco.beRepaired(10);
-	paco.takeDamage(18);
-	paco.attack(juan);
-	paco.highFivesGuys();
-	paco.takeDamage(500);
-	paco.highFivesGuys();
-	paco.attack(juan);
+	a.attack(b);
+	a.beRepaired(10);
+	a.takeDamage(18);
+	a.attack(b);
+	a.highFivesGuys();
+	a.takeDamage(500);
+	a.highFivesGuys();
+	a.attack(b);
 
 	return (0);
 }
