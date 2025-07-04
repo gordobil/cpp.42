@@ -16,11 +16,11 @@ int	main(void)
 	const WrongCat		*wrong_cat = new WrongCat();
 
 	std::cout << std::endl;
-	std::cout << animal1->getType() << " " << std::endl;
-	std::cout << cat1->getType() << " " << std::endl;
-	std::cout << dog1->getType() << " " << std::endl;
-	std::cout << wrong_animal->getType() << " " << std::endl;
-	std::cout << wrong_cat->getType() << " " << std::endl << std::endl;
+	std::cout << animal1->getType() << std::endl;
+	std::cout << cat1->getType() << std::endl;
+	std::cout << dog1->getType() << std::endl;
+	std::cout << wrong_animal->getType() << std::endl;
+	std::cout << wrong_cat->getType() << std::endl << std::endl;
 
 	animal1->makeSound();
 	dog1->makeSound();
