@@ -18,7 +18,7 @@ int	main(void)
 	
 	std::cout << std::endl;
 	for (int i = 0; i < n; i++)
-		std::cout << animals[i]->getType() << " " << std::endl;
+		std::cout << animals[i]->getType() << std::endl;
 
 	std::cout << std::endl;
 	for (int i = 0; i < n; i++)
@@ -27,6 +27,13 @@ int	main(void)
 	std::cout << std::endl;
 	for (int i = 0; i < n; i++)
 		delete animals[i];
+
+	std::cout << std::endl;
+	Cat *cat = new Cat();
+	Cat copy;
+	copy = *cat;
+	delete cat;
+	std::cout << std::endl;	
 
 	return (0);
 }
