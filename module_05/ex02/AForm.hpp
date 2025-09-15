@@ -1,10 +1,10 @@
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
 	private:
 		const std::string	name;
@@ -13,11 +13,11 @@ class Form
 		const int			gradeExe;
 
 	public:
-		Form();
-		Form(std::string newName, int newGradeSig, int newGradeExe);
-		Form(const Form &copy);
-		Form	&operator=(const Form &copy);
-		~Form();
+		AForm();
+		AForm(std::string newName, int newGradeSig, int newGradeExe);
+		AForm(const AForm &copy);
+		AForm	&operator=(const AForm &copy);
+		~AForm();
 	
 		//UTILS
 		std::string			getName(void)const;
@@ -42,6 +42,6 @@ class Form
 		};
 };
 
-std::ostream	&operator<<(std::ostream &out, const Form &form);
+std::ostream	&operator<<(std::ostream &out, const AForm &form);
 
 #endif

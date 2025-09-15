@@ -12,18 +12,15 @@ Bureaucrat::Bureaucrat(std::string newName, int newGrade) : name(newName){
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy){
-	if (this != &copy)
-		this->grade = copy.getGrade();
+	this->grade = copy.getGrade();
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy){
-	if (this != &copy)
-		this->grade = copy.getGrade();
+	this->grade = copy.getGrade();
 	return (*this);
 }
 
-Bureaucrat::~Bureaucrat(){
-}
+Bureaucrat::~Bureaucrat(){}
 
 // UTILS
 
@@ -31,11 +28,11 @@ std::string	Bureaucrat::getName(void)const{
 	return (name);
 }
 
-unsigned int	Bureaucrat::getGrade(void)const{
+int	Bureaucrat::getGrade(void)const{
 	return (grade);
 }
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat){
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
 	if (bureaucrat.getGrade() == 0)
 		out << "Uninitialized bureaucrat.";
 	else
@@ -67,7 +64,21 @@ void	Bureaucrat::decrementGrade(int value){
 		grade += value;
 		std::cout << name << " bureacrat grade decreased by " << value << " points (" << grade << ")." << std::endl;
 	}
+}
+
+void	Bureaucrat::signForm(class AForm &form){
+	try
+	{
+		form.beSigned(*this);
+		std::cout << "Bureaucrat " << name << " signed form " << form.getName() << "." << std::endl;
 	}
+	catch(const std::exception &e)
+	{
+		std::cout << "Bureaucrat " << name << " couldn't sign form " << form.getName() << " because bureaucrat "
+		<< name << "'s grade (" << grade << ") is lower than form " << form.getName() << "'s grade ("
+		<< form.getGradeSig() << ")."<< std::endl;
+	}
+}
 
 // EXCEPTIONS
 

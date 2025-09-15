@@ -1,10 +1,11 @@
 
-NAME				=	aform
+NAME				=	abstractForms
 
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	./Bureaucrat.cpp \
+SRC					=	./AForm.cpp \
+						./Bureaucrat.cpp \
 						./main.cpp \
 						./PresidentialPardonForm.cpp \
 						./RobotomyRequestForm.cpp \
@@ -38,7 +39,7 @@ all:				$(NAME)
 
 $(NAME):			$(OBJ)
 					@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-					@echo "\n·································· Compilation complete ···································"
+					@echo "\n······································ Compilation complete ·······································"
 					@echo "$$BANNER"
 
 $(OBJ_DIR)%.o:		./%.cpp | $(OBJ_DIR)
