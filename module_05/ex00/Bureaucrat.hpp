@@ -23,24 +23,24 @@ class Bureaucrat
 		std::string			getName(void)const;
 		unsigned int		getGrade(void)const;
 
-		//CHANGE GRADES
+		//EXECUTION
 		void				incrementGrade(int value);
 		void				decrementGrade(int value);
 
-		//EXEPTIONS
+		//EXCEPTIONS
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				const char *what() const throw();
+				const char	*what() const throw();
 		};
 
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				const char *what() const throw();
+				const char	*what() const throw();
 		};
 };
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif

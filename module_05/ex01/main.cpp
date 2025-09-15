@@ -15,5 +15,9 @@ int	main(void)
 	a.signForm(form);
 	b.signForm(form);
 
+	std::cout << std::endl;
+	a.incrementGrade(6);
+	a.signForm(form);
+
 	return (0);
 }

@@ -1,5 +1,5 @@
 
-NAME				=	form
+NAME				=	forms
 
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98

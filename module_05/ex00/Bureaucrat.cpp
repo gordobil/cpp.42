@@ -24,7 +24,7 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy){
 Bureaucrat::~Bureaucrat(){
 }
 
-//UTILS
+// UTILS
 
 std::string	Bureaucrat::getName(void)const{
 	return (name);
@@ -42,7 +42,7 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat){
 	return (out);
 }
 
-//CHANGE GRADES
+// EXECUTION
 
 void	Bureaucrat::incrementGrade(int value){
 	if (!value || value < 0)
@@ -52,7 +52,7 @@ void	Bureaucrat::incrementGrade(int value){
 	else
 	{
 		grade -= value;
-		std::cout << name << " bureacrat grade increased by " << value << " points." << std::endl;
+		std::cout << name << " bureacrat grade increased by " << value << " points (" << grade << ")." << std::endl;
 	}
 }
 
@@ -64,11 +64,11 @@ void	Bureaucrat::decrementGrade(int value){
 	else
 	{
 		grade += value;
-		std::cout << name << " bureacrat grade decreased by " << value << " points." << std::endl;
+		std::cout << name << " bureacrat grade decreased by " << value << " points (" << grade << ")." << std::endl;
 	}
 	}
 
-//EXCEPTIONS
+// EXCEPTIONS
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw(){
 	return ("Grade too high.");

@@ -50,7 +50,7 @@ void	Bureaucrat::incrementGrade(int value){
 	else
 	{
 		grade -= value;
-		std::cout << name << " bureacrat grade increased by " << value << " points." << std::endl;
+		std::cout << name << " bureacrat grade increased by " << value << " points (" << grade << ")." << std::endl;
 	}
 }
 
@@ -62,7 +62,7 @@ void	Bureaucrat::decrementGrade(int value){
 	else
 	{
 		grade += value;
-		std::cout << name << " bureacrat grade decreased by " << value << " points." << std::endl;
+		std::cout << name << " bureacrat grade decreased by " << value << " points (" << grade << ")." << std::endl;
 	}
 }
 
