@@ -4,15 +4,17 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 class Bureaucrat
 {
 	private:
 		const std::string	name;
-		unsigned int		grade;
+		int					grade;
 
 	public:
 		Bureaucrat();
+		Bureaucrat(std::string newName, int newGrade);
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat			&operator=(const Bureaucrat &copy);
 		~Bureaucrat();
@@ -22,12 +24,23 @@ class Bureaucrat
 		unsigned int		getGrade(void)const;
 
 		//CHANGE GRADES
-		void				incrementGrade(unsigned int value);
-		void				decrementGrade(unsigned int value);
+		void				incrementGrade(int value);
+		void				decrementGrade(int value);
 
 		//EXEPTIONS
-		void				gradeTooHighExeption();
-		void				gradeTooLowExeption();
+		class GradeTooLowException: public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+		class GradeTooHighException: public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
 
 #endif
