@@ -1,7 +1,8 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Default"), grade(0) {}
+Bureaucrat::Bureaucrat() :
+	name("Default"), grade(0) {}
 
 Bureaucrat::Bureaucrat(std::string newName, int newGrade) : name(newName){
 	if (newGrade < 1)
@@ -67,16 +68,27 @@ void	Bureaucrat::decrementGrade(int value){
 }
 
 void	Bureaucrat::signForm(class AForm &form){
-	try
-	{
+	try {
 		form.beSigned(*this);
 		std::cout << "Bureaucrat " << name << " signed form " << form.getName() << "." << std::endl;
 	}
-	catch(const std::exception &e)
-	{
+	catch(const std::exception &e){
 		std::cout << "Bureaucrat " << name << " couldn't sign form " << form.getName() << " because bureaucrat "
 		<< name << "'s grade (" << grade << ") is lower than form " << form.getName() << "'s grade ("
 		<< form.getGradeSig() << ")."<< std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const &form)const{
+	try {
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << "." << std::endl;
+	}
+	catch(const std::exception &e){
+		std::cout << "Bureaucrat " << name << " couldn't execute form " << form.getName() << " because bureaucrat "
+		<< name << "'s grade (" << grade << ") is lower than form " << form.getName() << "'s execution grade ("
+		<< form.getGradeExe() << ")."<< std::endl;
+
 	}
 }
 

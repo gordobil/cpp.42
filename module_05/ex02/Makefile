@@ -55,6 +55,7 @@ clean:
 
 fclean:				clean
 					@rm -f $(NAME)
+					@rm -f $(shell find ./ -name "*_shrubbery")
 					@echo "$(WHITE) · $(BLUE)Executable removed.$(WHITE)\n"
 
 re:					fclean $(NAME)

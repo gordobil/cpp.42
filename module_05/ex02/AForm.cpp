@@ -1,10 +1,11 @@
 
 #include "AForm.hpp"
 
-AForm::AForm() : name("Default"), sign(false), gradeSig(0), gradeExe(0) {}
+AForm::AForm() :
+	name("Default"), sign(false), gradeSig(0), gradeExe(0), target("Default") {}
 
-AForm::AForm(std::string newName, int newGradeSig, int newGradeExe) :
-	name(newName), sign(false), gradeSig(newGradeSig), gradeExe(newGradeExe){
+AForm::AForm(std::string newName, int newGradeSig, int newGradeExe, std::string newTarget) :
+	name(newName), sign(false), gradeSig(newGradeSig), gradeExe(newGradeExe), target(newTarget){
 
 	if (newGradeSig < 1)
 		throw GradeTooHighException();
@@ -17,7 +18,7 @@ AForm::AForm(std::string newName, int newGradeSig, int newGradeExe) :
 }
 
 AForm::AForm(const AForm &copy) :
-	name(copy.name), sign(copy.sign), gradeSig(copy.gradeSig), gradeExe(copy.gradeExe){}
+	name(copy.name), sign(copy.sign), gradeSig(copy.gradeSig), gradeExe(copy.gradeExe), target(copy.target){}
 
 AForm	&AForm::operator=(const AForm &copy){
 	sign = copy.getSign();
@@ -43,6 +44,10 @@ int			AForm::getGradeExe(void)const{
 	return(gradeExe);
 }
 
+std::string	AForm::getTarget(void)const{
+	return(target);
+}
+
 std::ostream	&operator<<(std::ostream &out, const AForm &form){
 	if (form.getGradeSig() == 0)
 		out << "Uninitialized form.";
@@ -59,6 +64,14 @@ void	AForm::beSigned(const Bureaucrat &bureaucrat){
 	sign = true;
 }
 
+void	AForm::execute(Bureaucrat const &executor)const{
+	if (sign == false)
+		throw FormNotSignedException();
+	if (executor.getGrade() > gradeExe)
+		throw GradeTooLowException();
+	beExecuted();
+}
+
 // EXCEPTIONS
 const char	*AForm::GradeTooHighException::what() const throw(){
 	return ("Form grade too high.");
@@ -66,4 +79,8 @@ const char	*AForm::GradeTooHighException::what() const throw(){
 
 const char *AForm::GradeTooLowException::what() const throw(){
 	return ("Form grade too low.");
+}
+
+const char *AForm::FormNotSignedException::what() const throw(){
+	return ("Form not signed.");
 }
