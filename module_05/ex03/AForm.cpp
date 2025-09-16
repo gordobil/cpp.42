@@ -52,7 +52,8 @@ std::ostream	&operator<<(std::ostream &out, const AForm &form){
 	if (form.getGradeSig() == 0)
 		out << "Uninitialized form.";
 	else
-		out << "Form " << form.getName() << " needs at least a grade " << form.getGradeSig()
+		out << "Form " << form.getName() << " with target " << form.getTarget()
+			<< " needs at least a grade " << form.getGradeSig()
 			<< " to be signed and a grade " << form.getGradeExe() << " to be executed.";
 	return (out);
 }

@@ -41,7 +41,7 @@ AForm	*Intern::makeForm(std::string form, std::string target){
 			return (pardon);
 		}
 		default:
-			std::cout << "Form " << form << " doesn't exist." << std::endl;
+			std::cout << "Form '" << form << "' doesn't exist." << std::endl;
 	}
 
 	return (NULL);

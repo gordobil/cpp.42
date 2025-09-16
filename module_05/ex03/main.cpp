@@ -12,7 +12,9 @@ int	main(void)
 	Intern		someRandomIntern;
 	AForm		*rrf;
 
+	rrf = someRandomIntern.makeForm("random form", "Bender");
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	std::cout << *rrf << std::endl;
 	bob.signForm(*rrf);
 	bob.executeForm(*rrf);
 
