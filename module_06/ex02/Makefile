@@ -4,9 +4,9 @@ NAME				=	converter
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	./Base.cpp \
-						./A.cpp \
+SRC					=	./A.cpp \
 						./B.cpp \
+						./Base.cpp \
 						./C.cpp \
 						./main.cpp \
 

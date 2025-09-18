@@ -4,8 +4,8 @@ NAME				=	converter
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	./ScalarConverter.cpp \
-						./main.cpp \
+SRC					=	./main.cpp \
+						./ScalarConverter.cpp \
 
 OBJ_DIR				=	.objects/
 OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)%.o)

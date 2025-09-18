@@ -4,8 +4,8 @@ NAME				=	serializer
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
-SRC					=	./Serializer.cpp \
-						./main.cpp \
+SRC					=	./main.cpp \
+						./Serializer.cpp \
 
 OBJ_DIR				=	.objects/
 OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)%.o)
