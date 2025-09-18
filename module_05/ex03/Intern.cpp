@@ -14,6 +14,7 @@ Intern	&Intern::operator=(const Intern &copy){
 
 Intern::~Intern(){}
 
+// MAKE FORM
 AForm	*Intern::makeForm(std::string form, std::string target){
  	std::string	formList[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 	int 		i = 0;

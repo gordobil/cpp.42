@@ -18,7 +18,6 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 // FUNCTIONS
-
 void	ShrubberyCreationForm::beExecuted(void)const{
 	std::ofstream	outfile;
 

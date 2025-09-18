@@ -16,6 +16,7 @@ class Intern
 		Intern	&operator=(const Intern &copy);
 		~Intern();
 
+		//MAKE FORM
 		AForm	*makeForm(std::string form, std::string target);
 };
 

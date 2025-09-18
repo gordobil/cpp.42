@@ -18,7 +18,6 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
 // FUNCTIONS
-
 void	RobotomyRequestForm::beExecuted(void)const{
 	if (getTarget()[0] % 2 != 0){
 		std::cout << "***drilling noises***" << std::endl;

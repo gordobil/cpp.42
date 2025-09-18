@@ -23,7 +23,6 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy){
 Bureaucrat::~Bureaucrat(){}
 
 // UTILS
-
 std::string	Bureaucrat::getName(void)const{
 	return (name);
 }
@@ -41,7 +40,6 @@ std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
 }
 
 // EXECUTION
-
 void	Bureaucrat::incrementGrade(int value){
 	if (!value || value < 0)
 		value = 0;
@@ -92,7 +90,6 @@ void	Bureaucrat::executeForm(AForm const &form)const{
 }
 
 // EXCEPTIONS
-
 const char	*Bureaucrat::GradeTooHighException::what() const throw(){
 	return ("Grade too high.");
 }
