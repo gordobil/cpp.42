@@ -21,7 +21,7 @@ class Bureaucrat
 
 		//UTILS
 		std::string			getName(void)const;
-		unsigned int		getGrade(void)const;
+		int					getGrade(void)const;
 
 		//EXECUTION
 		void				incrementGrade(int value);
