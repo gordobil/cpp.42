@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <string>
 
 class ScalarConverter
 {
@@ -14,7 +15,6 @@ class ScalarConverter
 		~ScalarConverter();
 
 	public:
-		//CONVERT
 		static void		convert(std::string param);
 };
 
