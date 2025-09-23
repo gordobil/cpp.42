@@ -15,31 +15,30 @@ ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &copy){
 ScalarConverter::~ScalarConverter(){}
 
 // CONVERT
-
 int	getParamType(std::string param)
 {
 	int		i = 0;
 	int		type = 0;
 
-	if (!isdigit(param[i]) && param.length() == 1)
+	if (!isdigit(param[i]) && (int)param.length() == 1)
 		return (1);
-	else if (!isdigit(param[i]) && param.length() > 1 && param[i] != '-')
+	else if (!isdigit(param[i]) && (int)param.length() > 1 && param[i] != '-')
 		return (0);
 	else
 		i++;
 
-	for (; i < param.length(); i++)
+	for (; i < (int)param.length(); i++)
 	{
 		if (!isdigit(param[i]) && type == '0' && param[i] == '.')
 			type = 4;
 		else if (!isdigit(param[i]) && (type == '0' || type == 'd')
-			&& i == param.length() - 1 && param[i] == 'f')
+			&& i == (int)param.length() - 1 && param[i] == 'f')
 			type = 3;
 		else if (!isdigit(param[i]))
 			break ;
 	}
 
-	if (i == param.length() && type == 0)
+	if (i == (int)param.length() && type == 0)
 		type = 2;
 	else if (param == "nan" || param == "nanf")
 		type = 5;
@@ -53,13 +52,13 @@ int	getParamType(std::string param)
 
 void	ScalarConverter::convert(std::string param){
 	int		type = getParamType(param);
-	char	c = static_cast<char>(param[0]);
+	int		c = static_cast<char>(param[0]);
 	int		i = stoi(param);
-	int		f = stof(param);
-	int		d = stod(param);
+	float	f = stof(param);
+	double	d = stod(param);
 
 	switch (type){
-		case 1:		/*************** CHAR ***************/
+		case 1:		/******************* CHAR *******************/
 		{
 			if (isprint(c))
 				std::cout << "char: " << c << std::endl;
@@ -71,7 +70,7 @@ void	ScalarConverter::convert(std::string param){
 			std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
 			std::cout << "double: " << static_cast<double>(c) << std::endl;
 		}
-		case 2:		/*************** INT ***************/
+		case 2:		/******************* INT *******************/
 		{
 			if (i > std::numeric_limits<int>::max() || i < std::numeric_limits<int>::min())
 			{
@@ -88,7 +87,7 @@ void	ScalarConverter::convert(std::string param){
 			std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
 			std::cout << "double: " << static_cast<double>(i) << std::endl;
 		}
-		case 3:		/************** FLOAT **************/
+		case 3:		/****************** FLOAT ******************/
 		{
 			if (f > std::numeric_limits<float>::max() || f < std::numeric_limits<float>::min())
 			{
@@ -105,7 +104,7 @@ void	ScalarConverter::convert(std::string param){
 			std::cout << "float: " << f << "f" << std::endl;
 			std::cout << "double: " << static_cast<double>(f) << std::endl;
 		}
-		case 4:		/************* DOUBLE **************/
+		case 4:		/***************** DOUBLE ******************/
 		{
 			if (d > std::numeric_limits<double>::max() || d < std::numeric_limits<double>::min())
 			{
@@ -122,21 +121,21 @@ void	ScalarConverter::convert(std::string param){
 			std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 			std::cout << "double: " << d << std::endl;
 		}
-		case 5:		/*************** NaN ***************/
+		case 5:		/******************* NaN *******************/
 		{
 			std::cout << "char: impossible" << std::endl;
 			std::cout << "int: impossible" << std::endl;
 			std::cout << "float: " << std::numeric_limits<float>::quiet_NaN() << "f" << std::endl;
 			std::cout << "double: " << std::numeric_limits<double>::quiet_NaN() << std::endl;
 		}
-		case 6:		/************* INFINITY *************/
+		case 6:		/***************** INFINITY *****************/
 		{
 			std::cout << "char: impossible" << std::endl;
 			std::cout << "int: impossible" << std::endl;
 			std::cout << "float: " << std::numeric_limits<float>::infinity() << "f" << std::endl;
 			std::cout << "double: " << std::numeric_limits<double>::infinity() << std::endl;
 		}
-		case 7:		/********* NEGATIVE INFINITY ********/
+		case 7:		/************* NEGATIVE INFINITY ************/
 		{
 			std::cout << "char: impossible" << std::endl;
 			std::cout << "int: impossible" << std::endl;
