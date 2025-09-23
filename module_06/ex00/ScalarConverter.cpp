@@ -66,9 +66,9 @@ void	ScalarConverter::convert(std::string param){
 				std::cout << "char: impossible" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl;
-			std::cout << "int: " << static_cast<int>(c) << std::endl;
-			std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
-			std::cout << "double: " << static_cast<double>(c) << std::endl;
+				std::cout << "int: " << static_cast<int>(c) << std::endl;
+				std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+				std::cout << "double: " << static_cast<double>(c) << std::endl;
 		}
 		case 2:		/******************* INT *******************/
 		{
@@ -83,9 +83,9 @@ void	ScalarConverter::convert(std::string param){
 				std::cout << "char: impossible" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl;
-			std::cout << "int: " << i << std::endl;
-			std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
-			std::cout << "double: " << static_cast<double>(i) << std::endl;
+				std::cout << "int: " << i << std::endl;
+				std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
+				std::cout << "double: " << static_cast<double>(i) << std::endl;
 		}
 		case 3:		/****************** FLOAT ******************/
 		{
@@ -100,9 +100,9 @@ void	ScalarConverter::convert(std::string param){
 				std::cout << "char: impossible" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl;
-			std::cout << "int: " << static_cast<int>(f) << std::endl;
-			std::cout << "float: " << f << "f" << std::endl;
-			std::cout << "double: " << static_cast<double>(f) << std::endl;
+				std::cout << "int: " << static_cast<int>(f) << std::endl;
+				std::cout << "float: " << f << "f" << std::endl;
+				std::cout << "double: " << static_cast<double>(f) << std::endl;
 		}
 		case 4:		/***************** DOUBLE ******************/
 		{
@@ -117,9 +117,9 @@ void	ScalarConverter::convert(std::string param){
 				std::cout << "char: impossible" << std::endl;
 			else
 				std::cout << "char: non displayable" << std::endl;
-			std::cout << "int: " << static_cast<int>(d) << std::endl;
-			std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-			std::cout << "double: " << d << std::endl;
+				std::cout << "int: " << static_cast<int>(d) << std::endl;
+				std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+				std::cout << "double: " << d << std::endl;
 		}
 		case 5:		/******************* NaN *******************/
 		{
