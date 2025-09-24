@@ -14,7 +14,7 @@ int	main(int argc, char **argv)
 		std::cout << CYAN "--------------------------------" WHITE << std::endl;
 	}
 
-	std::cout << std::endl;
+/* 	std::cout << std::endl;
 	std::cout << RED "   CHAR TESTS:" WHITE << std::endl;
 	ScalarConverter::convert("A");
 	std::cout << std::endl;
@@ -53,5 +53,6 @@ int	main(int argc, char **argv)
 	ScalarConverter::convert("+inff");
 	std::cout << std::endl;
 	ScalarConverter::convert("-inf");
-	std::cout << std::endl;
+	std::cout << std::endl; */
+	return (0);
 }
