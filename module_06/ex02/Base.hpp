@@ -2,17 +2,20 @@
 #ifndef BASE_HPP
 #define BASE_HPP
 
-#include <string>
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+#include <typeinfo>
 
 class Base
 {
-	private:
-
 	public:
-		Base();
-		Base(const Base &copy);
-		Base	&operator=(const Base &copy);
-		~Base();
+		virtual ~Base();
 };
+
+// FUNCTIONS
+Base	*generate(void);
+void	identify(Base *p);
+void	identify(Base &p);
 
 #endif

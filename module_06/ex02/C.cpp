@@ -1,15 +1,8 @@
 
 #include "C.hpp"
 
-C::C(){}
-
-C::C(const C &copy){
-	*this = copy;
+C::C(){
+	std::cout << "Class type 'C' randomly created." << std::endl;
 }
 
-C	&C::operator=(const C &copy){
-	*this = copy;
-	return (*this);
-}
-
-C::~C(){}
+C::~C() {}

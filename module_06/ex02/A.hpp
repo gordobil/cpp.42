@@ -2,16 +2,12 @@
 #ifndef A_HPP
 #define A_HPP
 
-#include <string>
+#include "Base.hpp"
 
-class A
+class A : public Base
 {
-	private:
-
 	public:
 		A();
-		A(const A &copy);
-		A	&operator=(const A &copy);
 		~A();
 };
 
