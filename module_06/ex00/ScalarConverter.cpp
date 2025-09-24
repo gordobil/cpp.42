@@ -195,6 +195,9 @@ void	ScalarConverter::convert(std::string param){
 			break ;
 		}
 		default:
+		{
+			std::cout << "Invalid parameter, unable to cast." << std::endl;
 			break ;
+		}
 	}
 }
