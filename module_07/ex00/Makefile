@@ -1,11 +1,10 @@
 
-NAME				=	compareValues
+NAME				=	templates
 
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 SRC					=	./main.cpp \
-						./CompareValues.cpp \
 
 OBJ_DIR				=	.objects/
 OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)%.o)

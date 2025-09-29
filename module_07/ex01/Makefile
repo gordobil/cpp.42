@@ -5,7 +5,6 @@ CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 SRC					=	./main.cpp \
-						./Iter.cpp \
 
 OBJ_DIR				=	.objects/
 OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)%.o)
