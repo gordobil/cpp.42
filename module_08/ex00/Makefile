@@ -1,5 +1,5 @@
 
-NAME				=	templates
+NAME				=	containers
 
 CC					=	c++
 FLAGS				=	-Wall -Wextra -Werror -std=c++98
