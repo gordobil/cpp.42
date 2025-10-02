@@ -1,0 +1,43 @@
+
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <exception>
+#include <ctime>
+
+class Span
+{
+	private:
+		unsigned int		max;
+		std::vector<int>	container;
+
+	public:
+		Span(unsigned int N);
+		Span(const Span &copy);
+		Span	&operator=(const Span &copy);
+		~Span();
+
+		//UTILS
+		unsigned int		getMax(void)const;
+		std::vector<int>	getContainer(void)const;
+
+		//FUNCTIONS
+		void				addNumber(int n);
+		int					longestSpan(void)const;
+		int					shortestSpan(void)const;
+
+		//EXCEPTIONS
+		class ExceptionMessage: public std::exception{
+			private:
+				const char	*error;
+			public:
+				ExceptionMessage(const char *mss){
+					error = mss;}
+				const char	*what() const throw();
+		};
+};
+
+#endif
