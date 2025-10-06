@@ -1,5 +1,5 @@
 
-#include "whatever.hpp"
+#include "whatever.tpp"
 
 int	main(void)
 {

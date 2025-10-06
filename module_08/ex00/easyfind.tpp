@@ -1,7 +1,4 @@
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
-
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -15,5 +12,3 @@ void	easyfind(T &container, int n){
 	else
 		std::cout << n << " found."<< std::endl;
 }
-
-#endif

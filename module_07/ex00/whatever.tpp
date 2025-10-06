@@ -1,7 +1,4 @@
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
-
 #include <iostream>
 
 template <typename T>
@@ -28,5 +25,3 @@ T	&max(T &p1, T &p2){
 	else
 		return (p2);
 }
-
-#endif
