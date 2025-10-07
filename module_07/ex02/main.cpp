@@ -54,58 +54,56 @@ int	intra_main()
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2 || (std::string)argv[1] != "intra")
-	{
-		Array<int>			v;
-		Array<std::string>	s(4);
-		Array<int>			i(12);
-		Array<char>			c(26);
+	if (argc == 2 && (std::string)argv[1] == "intra")
+		return (intra_main());
+
+	Array<int>			v;
+	Array<std::string>	s(4);
+	Array<int>			i(12);
+	Array<char>			c(26);
 
 		// EMPTY
-		std::cout << " ¬ EMPTY ARRAY" << std::endl;
-		std::cout << "v.size=" << v.size();
-		std::cout << "   *v=" << *v << std::endl << std::endl;
+	std::cout << " ¬ EMPTY ARRAY" << std::endl;
+	std::cout << "v.size=" << v.size();
+	std::cout << "   *v=" << *v << std::endl << std::endl;
 
 		// STRING
-		std::cout << " ¬ STRING ARRAY" << std::endl;
-		s[0] = "cero";
-		s[1] = "uno";
-		s[2] = "dos";
-		s[3] = "tres";
-		try{
-			s[10] = "ten";
-		}
-		catch(const std::exception &e){
-			std::cerr << e.what() << std::endl;
-		}
-		std::cout << "s.size=" << s.size();
-		std::cout << "   *s=" << *s << std::endl << std::endl;
-		for (unsigned int x = 0; x < s.size(); x++)
-			std::cout << x << ": " << s[x] << std::endl;
-		std::cout << std::endl;
+	std::cout << " ¬ STRING ARRAY" << std::endl;
+	s[0] = "cero";
+	s[1] = "uno";
+	s[2] = "dos";
+	s[3] = "tres";
+	try{
+		s[10] = "ten";
+	}
+	catch(const std::exception &e){
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "s.size=" << s.size();
+	std::cout << "   *s=" << *s << std::endl << std::endl;
+	for (unsigned int x = 0; x < s.size(); x++)
+		std::cout << x << ": " << s[x] << std::endl;
+	std::cout << std::endl;
 
 		// INT
-		std::cout << " ¬ INT ARRAY" << std::endl;
-		for (unsigned int x = 0; x < i.size(); x++)
-			i[x] = x;
-		std::cout << "i.size=" << i.size();
-		std::cout << "   *i=" << *i << std::endl;
-		for (unsigned int x = 0; x < i.size(); x++)
-			std::cout << x << ": " << i[x] << std::endl;
-		std::cout << std::endl;
+	std::cout << " ¬ INT ARRAY" << std::endl;
+	for (unsigned int x = 0; x < i.size(); x++)
+		i[x] = x;
+	std::cout << "i.size=" << i.size();
+	std::cout << "   *i=" << *i << std::endl;
+	for (unsigned int x = 0; x < i.size(); x++)
+		std::cout << x << ": " << i[x] << std::endl;
+	std::cout << std::endl;
 
 		// CHAR
-		std::cout << " ¬ CHAR ARRAY" << std::endl;
-		for (unsigned int x = 0; x < c.size(); x++)
-			c[x] = 'a' + x;
-		std::cout << "c.size=" << c.size();
-		std::cout << "   *c=" << *c << std::endl;
-		for (unsigned int x = 0; x < c.size(); x++)
-			std::cout << x << ": " << c[x] << std::endl;
-		std::cout << std::endl;
-	}
-	else
-		intra_main();
+	std::cout << " ¬ CHAR ARRAY" << std::endl;
+	for (unsigned int x = 0; x < c.size(); x++)
+		c[x] = 'a' + x;
+	std::cout << "c.size=" << c.size();
+	std::cout << "   *c=" << *c << std::endl;
+	for (unsigned int x = 0; x < c.size(); x++)
+		std::cout << x << ": " << c[x] << std::endl;
+	std::cout << std::endl;
 
 	return (0);
 }
