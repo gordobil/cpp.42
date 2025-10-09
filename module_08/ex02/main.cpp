@@ -33,23 +33,25 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 && (std::string)argv[1] == "subject")
 		return (subject_main());
-
-	int					amount = 30;
-
-	std::srand(time(NULL));
-	for (int i = 0; i < amount; i++)
+	else if (argc == 3 && (std::string)argv[1] == "random" && !isdigit(atoi(argv[2])))
+	{
+		std::srand(time(NULL));
+		for (int i = 0; i < atoi(argv[2]); i++)
 			ms.push(std::rand());
-
-	ms.push(0);
-	ms.push(1);
-	ms.push(2);
-	ms.push(3);
-	ms.push(4);
-	ms.push(5);
-	ms.push(6);
-	ms.push(7);
-	ms.push(8);
-	ms.push(9);
+	}
+	else
+	{
+		ms.push(0);
+		ms.push(1);
+		ms.push(2);
+		ms.push(3);
+		ms.push(4);
+		ms.push(5);
+		ms.push(6);
+		ms.push(7);
+		ms.push(8);
+		ms.push(9);
+	}
 
 	std::cout << "TOP:" << ms.top() << std::endl;
 	std::cout << "SIZE:" << ms.size() << std::endl << std::endl;
