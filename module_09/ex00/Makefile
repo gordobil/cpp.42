@@ -6,6 +6,7 @@ FLAGS				=	-Wall -Wextra -Werror -std=c++98
 
 SRC					=	./main.cpp \
 						./BitcoinExchange.cpp \
+						./Date.cpp \
 
 OBJ_DIR				=	.objects/
 OBJ					=	$(SRC:./%.cpp=$(OBJ_DIR)%.o)
