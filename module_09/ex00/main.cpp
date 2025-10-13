@@ -3,11 +3,16 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2)
-		return (std::cout << "Error: could not open file." << std::cout, 1);
+	if (argc < 2)
+		return (std::cout << "Error: error opening input file." << std::endl, 1);
 	
-	BitcoinExchange	bitcoins;
-	bitcoins.exchange(argv[1]);
+	BitcoinExchange	bitcoins("data.csv");
+	for (int i = 1; i < argc; i++){
+		std::cout << " ¬ File: " << argv[i] << std::endl;
+		bitcoins.exchange(argv[i]);
+		if (i != argc)
+			std::cout << std::endl;
+	}
 
 	return (0);
 }

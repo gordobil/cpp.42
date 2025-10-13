@@ -1,21 +1,17 @@
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange(){
-	BitcoinExchange::BitcoinExchange("data.csv");
-}
-
 BitcoinExchange::BitcoinExchange(std::string newData){
-	std::ifstream	file(newData);
+	std::ifstream	file(newData.c_str());
 	if (!file.is_open())
-		throw	std::runtime_error("Error: error opening exchange rates file.")
+		throw	std::runtime_error("Error: error opening exchange rates file.");
 	
 	std::string	line;
 	std::getline(file, line);
 	while (std::getline(file, line)){
 		Date	date(line.substr(0, line.find(',')));
-		float	ex_rate = atof(line.substr(line.find(','), line.strlen()));
-		date.insert(date, ex_rate);
+		float	ex_rate = atof(line.substr(line.find(',') + 1, line.length()).c_str());
+		data.insert(std::make_pair(date, ex_rate));
 	}
 
 	file.close();
@@ -25,9 +21,9 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy){
 	data = copy.getData();
 }
 
-BitcoinExchange	&operator=(const BitcoinExchange &copy){
+BitcoinExchange	&BitcoinExchange::operator=(const BitcoinExchange &copy){
 	data = copy.getData();
-	return (this);
+	return (*this);
 }
 
 BitcoinExchange::~BitcoinExchange() {}
@@ -37,78 +33,73 @@ std::map<Date, float>	BitcoinExchange::getData(void)const{
 	return (data);
 }
 
-bool	BitcoinExchange::compareDates(Date &date, Date &compare){
-	if (date.year < compare.year)
-		return (false);
-	if (date.year >= compare.year && date.month < compare.month)
-		return (false);
-	if (date.year >= compare.year && date.month >= compare.month && date.day < compare.day)
-		return (false);
-
-	return (true);
-}
-
 bool	BitcoinExchange::checkValue(float value){
-	if (value < 0 || value > 1000)
+	if (value < 0){
+		std::cout << "Error: not a positive number." << std::endl;
 		return (false);
+	}
+	else if (value > 1000){
+		std::cout << "Error: too large a number." << std::endl;
+		return (false);
+	}
+
 	return (true);
 }
 
 bool	BitcoinExchange::checkDate(std::string date){
-	int	maxDays[] = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
-	int	year = atoi(date.substr(0, date.find('-')));
-	int	month = atoi(date.substr(date.find('-'), date.find_last_of('-')));
-	int	day = atoi(date.substr(date.find_last_of('-'), date.strlen()));
+	int	maxDays[] = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	int	y = atoi(date.substr(0, date.find('-')).c_str());
+	int	m = atoi(date.substr(date.find('-') + 1, date.find_last_of('-')).c_str());
+	int	d = atoi(date.substr(date.find_last_of('-') + 1, date.length()).c_str());
 
-	if (year < 0 || year > 2025)
+	if (y < 0 || y > 2025)
 		return (false);
-	if (month < 1 || month > 12)
+	if (m < 1 || m > 12)
 		return (false);
-	if (day < 1 || day > maxDays[month])
+	if (d < 1 || d > maxDays[m])
 		return (false);
-	if (month == 2 && day == 28 && (year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)))
+	if (m == 2 && d == 28 && (y % 4 != 0 || (y % 100 == 0 && y % 400 != 0)))
 		return (false);
 
 	return (true);
 }
 
 bool	BitcoinExchange::checkLine(std::string line){
-	bool		errors = false;
+	bool		ok = true;
 
-	if (!line.find('|')){
-		std::cout << "Error: invalid input." << std::endl;
-		errors = true;	
+	if (!checkDate(line.substr(0, line.find(' ')))){
+		std::cout << "Error: invalid date => " << line.substr(0, line.find(' ')) << std::endl;
+		ok = false;
 	}
-	if (checkDate(line.substr(0, line.find(' ')))){
-		std::cout << "Error: invalid date." << std:endl;
-		errors = true;
+	else if (!checkValue(atof(line.substr(line.find_last_of(' ') + 1, line.length()).c_str()))){
+		ok = false;
 	}
-	if (checkValue(atof(line.substr(line.find_last_of(' '), line.strlen())))){
-		std::cout << "Error: invalid value." << std::endl;
-		errors = true;
+	else if (line.find('|') == std::string::npos){
+		std::cout << "Error: invalid format." << std::endl;
+		ok = false;	
 	}
 
-	return (errors);
+	return (ok);
 }
 
 void	BitcoinExchange::exchange(std::string inputFile){
-	if (!data)
-		throw	std::runtime_error("Error: uninitialized class, exchange rates missing.");
-	std::ifstream	file(inputFile);
-	if (!file.is_open())
-		throw	std::runtime_error("Error: error opening input file.");
+	std::ifstream	file(inputFile.c_str());
+	if (!file.is_open()){
+		std::cout << "Error: error opening input file." << std::endl;
+		return ;
+	}
 
 	std::string	line;
 	std::getline(file, line);
 	while (std::getline(file, line))
 	{
 		if (checkLine(line)){
-			Date	date(line.substr(0, line.find(' ')));
-			float	value(atof(line.substr(line.find_last_of(' '), line.strlen())));
-			if (compareDates(date, data.begin()->first) || compareDates(data.end()->first, date))
+			Date	date(line.substr(0, line.find(' ')).c_str());
+			float	value = atof(line.substr(line.find_last_of(' ') + 1, line.length()).c_str());
+ 			if (date < data.begin()->first || date > data.rbegin()->first)
 				std::cout << "Error: date out of bounds." << std::endl;
 			else
-				std::cout << date << " => " << value << " = " << value * data.find(date)->second  << std::endl;
+				std::cout << date << " => " << value << " = " << value * data.find(date)->second << std::endl;
 		}
 	}
 	file.close();

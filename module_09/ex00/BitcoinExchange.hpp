@@ -3,9 +3,11 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <iostream>
+#include <string>
 #include <stdlib.h>
 #include <fstream>
 #include <map>
+#include <utility>
 #include "Date.hpp"
 
 class BitcoinExchange
@@ -14,7 +16,6 @@ class BitcoinExchange
 		std::map<Date, float>	data;
 
 	public:
-		BitcoinExchange();
 		BitcoinExchange(std::string newData);
 		BitcoinExchange(const BitcoinExchange &copy);
 		BitcoinExchange	&operator=(const BitcoinExchange &copy);
@@ -25,7 +26,6 @@ class BitcoinExchange
 		bool					checkLine(std::string line);
 		bool					checkDate(std::string date);
 		bool					checkValue(float value);
-		bool					compareDates(Date &date, Date &compare);
 		std::map<Date, float>	getData(void)const;
 };
 

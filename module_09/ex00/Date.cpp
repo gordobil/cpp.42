@@ -2,9 +2,9 @@
 #include "Date.hpp"
 
 Date::Date(std::string newDate){
-	year = atoi(newDate.substr(0, newDate.find('-')));
-	month = atoi(newDate.substr(newDate.find('-'), newDate.find_last_of('-')));
-	day = atoi(newDate.substr(newDate.find_last_of('-'), newDate.strlen()));
+	year = atoi(newDate.substr(0, newDate.find('-')).c_str());
+	month = atoi(newDate.substr(newDate.find('-') + 1, newDate.find_last_of('-')).c_str());
+	day = atoi(newDate.substr(newDate.find_last_of('-') + 1, newDate.length()).c_str());
 }
 
 std::ostream	&operator<<(std::ostream &out, const Date &date){
@@ -25,4 +25,57 @@ std::ostream	&operator<<(std::ostream &out, const Date &date){
 	out << date.day;
 
 	return (out);
+}
+
+// COMPARE
+bool	Date::operator>(const Date &compare)const{
+	if (year > compare.year)
+		return (true);
+	if (year >= compare.year && month > compare.month)
+		return (true);
+	if (year >= compare.year && month >= compare.month && day > compare.day)
+		return (true);
+	return (false);
+}
+
+bool	Date::operator<(const Date &compare)const{
+	if (year < compare.year)
+		return (true);
+	if (year <= compare.year && month < compare.month)
+		return (true);
+	if (year <= compare.year && month <= compare.month && day < compare.day)
+		return (true);
+	return (false);
+}
+
+bool	Date::operator>=(const Date &compare)const{
+	if (year > compare.year)
+		return (true);
+	if (year >= compare.year && month > compare.month)
+		return (true);
+	if (year >= compare.year && month >= compare.month && day >= compare.day)
+		return (true);
+	return (false);
+}
+
+bool	Date::operator<=(const Date &compare)const{
+	if (year < compare.year)
+		return (true);
+	if (year <= compare.year && month < compare.month)
+		return (true);
+	if (year <= compare.year && month <= compare.month && day <= compare.day)
+		return (true);
+	return (false);
+}
+
+bool	Date::operator==(const Date &compare)const{
+	if (year == compare.year && month == compare.month && day == compare.day)
+		return (true);
+	return (false);
+}
+
+bool	Date::operator!=(const Date &compare)const{
+	if (year != compare.year || month != compare.month || day != compare.day)
+		return (true);
+	return (false);
 }
