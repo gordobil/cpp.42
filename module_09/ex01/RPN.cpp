@@ -6,11 +6,11 @@ RPN::RPN(std::string arg){
 }
 
 RPN::RPN(const RPN &copy){
-	(void)copy;
+	*this = copy;
 }
 
 RPN	&RPN::operator=(const RPN &copy){
-	(void)copy;
+	*this = copy;
 	return (*this);
 }
 
