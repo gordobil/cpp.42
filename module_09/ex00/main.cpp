@@ -4,7 +4,7 @@
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
-		return (std::cout << "Error: error opening input file." << std::endl, 1);
+		return (std::cerr << "Error: error opening input file." << std::endl, 1);
 	
 	BitcoinExchange	bitcoins("data.csv");
 	for (int i = 1; i < argc; i++){
