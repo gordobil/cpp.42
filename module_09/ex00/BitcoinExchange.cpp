@@ -98,8 +98,12 @@ void	BitcoinExchange::exchange(std::string inputFile){
 			float	value = atof(line.substr(line.find_last_of(' ') + 1, line.length()).c_str());
  			if (date < data.begin()->first || date > data.rbegin()->first)
 				std::cout << "Error: date out of bounds." << std::endl;
-			else
-				std::cout << date << " => " << value << " = " << value * data.find(date)->second << std::endl;
+			else{
+				std::map<Date, float>::iterator	i = data.lower_bound(date);
+				if ((i->first != date || i == data.end()) && i != data.begin())
+					i--;
+				std::cout << date << " => " << value << " = " << value * i->second << std::endl;
+			}
 		}
 	}
 	file.close();
