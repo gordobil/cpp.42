@@ -3,10 +3,15 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc != 2)
-		return (retError());
+	if (argc != 2){
+		std::cerr << "Error: invalid number of arguments." << std::endl;
+		return (1);
+	}
 
-	RPN	calculate((std::string(argv[1])));
+	try{
+		RPN	calculate((std::string(argv[1])));}
+	catch (std::exception &e){
+		std::cerr << e.what() << std::endl;}
 
 	return (0);
 }

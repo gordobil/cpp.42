@@ -18,7 +18,4 @@ class RPN
 		int	getAnswer(int a, int b, char token);
 };
 
-//UTILS
-int	retError();
-
 #endif

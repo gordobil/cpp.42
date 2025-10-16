@@ -23,7 +23,7 @@ int	RPN::getAnswer(int a, int b, char token){
 		case '-': return (a - b);
 		case '*': return (a * b);
 		case '/': return (a / b);
-		default: return (0);
+		default: throw std::runtime_error("Error: invalid character.");
 	}
 }
 
@@ -35,28 +35,22 @@ int	RPN::calculateRPN(std::string arg){
 			i++;
 		if (*i == '+' || *i == '-' || *i == '/' || *i == '*'){
 			if (numbers.size() < 2)
-				return (retError());
+				throw std::runtime_error("Error: not enough numbers.");
 			int	tempB = numbers.top();
 			numbers.pop();
 			int	tempA = numbers.top();
 			numbers.pop();
 			if (*i == '/' && tempA == 0)
-				return (retError());
+				throw std::runtime_error("Error: can't divide by 0.");
 			numbers.push(getAnswer(tempA, tempB, *i));
 		}
 		else if (isdigit(*i))
 			numbers.push(*i - 48);
 		else
-			return (retError());
+			throw std::runtime_error("Error: invalid character.");
 	}
 	if (numbers.size() != 1)
-		return (retError());
+		throw std::runtime_error("Error: invalid expression.");
 	std::cout << numbers.top() << std::endl;
 	return (0);
-}
-
-// UTILS
-int	retError(){
-	std::cerr << "Error" << std::endl;
-	return (1);
 }
