@@ -7,10 +7,11 @@ void	tenThousandNumbers(){
 
 	std::srand(time(NULL));
 	try {
+		std::cout << RED " ¬ 10000 NUMBERS:" WHITE << std::endl;
 		for (int i = 0; i < amount; i++)
 			c.addNumber(std::rand());
-		std::cout << "longestSpan=" << c.longestSpan() << std::endl;
-		std::cout << "shortestSpan=" << c.shortestSpan() << std::endl;
+		std::cout << CYAN "longestSpan=" WHITE << c.longestSpan() << std::endl;
+		std::cout << CYAN "shortestSpan=" WHITE << c.shortestSpan() << std::endl;
 	}
 	catch (const std::exception &e){
 		std::cerr << e.what() <<std::endl;
@@ -22,6 +23,7 @@ int	main(void)
 	Span	c(10);
 
 	try {
+		std::cout << RED " ¬ EMPTY:" WHITE << std::endl;
 		c.longestSpan();
 	}
 	catch (const std::exception &e){
@@ -29,6 +31,7 @@ int	main(void)
 	}
 
 	try {
+		std::cout << RED " ¬ 10 NUMBERS:" WHITE << std::endl;
 		c.addNumber(-10);
 		c.addNumber(-1);
 		c.addNumber(1);
@@ -40,8 +43,8 @@ int	main(void)
 		c.addNumber(28);
 		c.addNumber(40);
 
-		std::cout << "longestSpan=" << c.longestSpan() << std::endl;
-		std::cout << "shortestSpan=" << c.shortestSpan() << std::endl;
+		std::cout << CYAN "longestSpan=" WHITE << c.longestSpan() << std::endl;
+		std::cout << CYAN "shortestSpan=" WHITE << c.shortestSpan() << std::endl;
 
 		c.addNumber(0);
 	}

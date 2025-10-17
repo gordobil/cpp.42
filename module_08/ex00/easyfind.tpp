@@ -5,6 +5,10 @@
 #include <list>
 #include <deque>
 
+# define RED	"\033[1;95m"
+# define CYAN	"\033[1;31m"
+# define WHITE	"\033[0m"
+
 template <typename T>
 void	easyfind(T &container, int n){
 	if (std::find(container.begin(), container.end(), n) == container.end())

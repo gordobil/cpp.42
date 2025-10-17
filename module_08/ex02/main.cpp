@@ -53,22 +53,22 @@ int	main(int argc, char **argv)
 		ms.push(9);
 	}
 
-	std::cout << "TOP:" << ms.top() << std::endl;
-	std::cout << "SIZE:" << ms.size() << std::endl << std::endl;
+	std::cout << CYAN "TOP:" WHITE << ms.top() << std::endl;
+	std::cout << CYAN "SIZE:" WHITE << ms.size() << std::endl << std::endl;
 
 	ms.pop();
-	std::cout << "ms.pop()" << std::endl;
-	std::cout << "TOP:" << ms.top() << std::endl;
-	std::cout << "SIZE:" << ms.size() << std::endl << std::endl;
+	std::cout << RED "After .pop()" WHITE << std::endl;
+	std::cout << CYAN "TOP:" WHITE << ms.top() << std::endl;
+	std::cout << CYAN "SIZE:" WHITE << ms.size() << std::endl << std::endl;
 
-	std::cout << " ¬ ITER" << std::endl;
+	std::cout << RED " ¬ ITER" WHITE << std::endl;
 	MutantStack<int>::iterator			itB = ms.begin();
 	MutantStack<int>::iterator			itE = ms.end();
 	for (;itB != itE; itB++)
 		std::cout << *itB << std::endl;
 
 	std::cout << std::endl;
-	std::cout << " ¬ REVERSE ITER" << std::endl;
+	std::cout << RED " ¬ REVERSE ITER" WHITE << std::endl;
 	MutantStack<int>::reverse_iterator	ritB = ms.rbegin();
 	MutantStack<int>::reverse_iterator	ritE = ms.rend();
 	for (;ritB != ritE; ritB++)
