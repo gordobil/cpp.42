@@ -62,13 +62,13 @@ int	main(int argc, char **argv)
 	Array<int>			i(12);
 	Array<char>			c(26);
 
-		// EMPTY
-	std::cout << " ¬ EMPTY ARRAY" << std::endl;
-	std::cout << "v.size=" << v.size();
-	std::cout << "   *v=" << *v << std::endl << std::endl;
+	  /********************** EMPTY *********************/
+	std::cout << RED " ¬ EMPTY ARRAY" << std::endl;
+	std::cout << CYAN "v.size=" WHITE << v.size();
+	std::cout << CYAN "   *v=" WHITE << *v << std::endl << std::endl;
 
-		// STRING
-	std::cout << " ¬ STRING ARRAY" << std::endl;
+	  /********************* STRING *********************/
+	std::cout << RED " ¬ STRING ARRAY" WHITE << std::endl;
 	s[0] = "cero";
 	s[1] = "uno";
 	s[2] = "dos";
@@ -79,30 +79,30 @@ int	main(int argc, char **argv)
 	catch(const std::exception &e){
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "s.size=" << s.size();
-	std::cout << "   *s=" << *s << std::endl << std::endl;
+	std::cout << CYAN "s.size=" WHITE<< s.size();
+	std::cout << CYAN "   *s=" WHITE<< *s << std::endl << std::endl;
 	for (unsigned int x = 0; x < s.size(); x++)
-		std::cout << x << ": " << s[x] << std::endl;
+		std::cout << CYAN << x << ": " WHITE << s[x] << std::endl;
 	std::cout << std::endl;
 
-		// INT
-	std::cout << " ¬ INT ARRAY" << std::endl;
+	  /********************** INT **********************/
+	std::cout << RED " ¬ INT ARRAY" << std::endl;
 	for (unsigned int x = 0; x < i.size(); x++)
 		i[x] = x;
-	std::cout << "i.size=" << i.size();
-	std::cout << "   *i=" << *i << std::endl;
+	std::cout << CYAN "i.size=" WHITE << i.size();
+	std::cout << CYAN "   *i=" WHITE << *i << std::endl;
 	for (unsigned int x = 0; x < i.size(); x++)
-		std::cout << x << ": " << i[x] << std::endl;
+		std::cout << CYAN << x << ": " WHITE << i[x] << std::endl;
 	std::cout << std::endl;
 
-		// CHAR
-	std::cout << " ¬ CHAR ARRAY" << std::endl;
+	  /********************* CHAR *********************/
+	std::cout << RED " ¬ CHAR ARRAY" << std::endl;
 	for (unsigned int x = 0; x < c.size(); x++)
 		c[x] = 'a' + x;
-	std::cout << "c.size=" << c.size();
-	std::cout << "   *c=" << *c << std::endl;
+	std::cout << CYAN "c.size=" WHITE << c.size();
+	std::cout << CYAN "   *c=" WHITE << *c << std::endl;
 	for (unsigned int x = 0; x < c.size(); x++)
-		std::cout << x << ": " << c[x] << std::endl;
+		std::cout << CYAN << x << ": " WHITE << c[x] << std::endl;
 	std::cout << std::endl;
 
 	return (0);
