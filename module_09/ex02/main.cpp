@@ -4,14 +4,14 @@
 void	printInfoMssg(PmergeMe sorted){
 	std::cout << std::fixed << std::setprecision(5);
 
-	std::cout << "Before:\t" << sorted.get_vNum() << std::endl;
-	std::cout << "After:\t" << sorted.get_vSort() << std::endl;
+	std::cout << CYAN "Before:\t" WHITE << sorted.get_vNum() << std::endl;
+	std::cout << CYAN "After:\t" WHITE << sorted.get_vSort() << std::endl;
 
-	std::cout << "Time to process a range of " << sorted.get_vNum().size();
-	std::cout << " elements with std::vector : " << sorted.get_vTime() << " us" << std::endl;
+	std::cout << CYAN "Time to process a range of " WHITE << sorted.get_vNum().size();
+	std::cout << CYAN " elements with std::vector : " WHITE << sorted.get_vTime() << " us" << std::endl;
 
-	std::cout << "Time to process a range of " << sorted.get_dNum().size();
-	std::cout << " elements with std::deque  : " << sorted.get_dTime() << " us" << std::endl;
+	std::cout << CYAN "Time to process a range of " WHITE << sorted.get_dNum().size();
+	std::cout << CYAN " elements with std::deque  : " WHITE << sorted.get_dTime() << " us" << std::endl;
 }
 
 int	main(int argc, char **argv)

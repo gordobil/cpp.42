@@ -8,7 +8,7 @@ int	main(int argc, char **argv)
 	
 	BitcoinExchange	bitcoins("data.csv");
 	for (int i = 1; i < argc; i++){
-		std::cout << " ¬ File: " << argv[i] << std::endl;
+		std::cout << RED " ¬ File: " WHITE << argv[i] << std::endl;
 		bitcoins.exchange(argv[i]);
 		if (i != argc - 1)
 			std::cout << std::endl;

@@ -35,11 +35,11 @@ std::map<Date, float>	BitcoinExchange::getData(void)const{
 
 bool	BitcoinExchange::checkValue(float value){
 	if (value < 0){
-		std::cerr << "Error: not a positive number." << std::endl;
+		std::cerr << CYAN "Error: not a positive number." WHITE << std::endl;
 		return (false);
 	}
 	else if (value > 1000){
-		std::cerr << "Error: too large a number." << std::endl;
+		std::cerr << CYAN "Error: too large a number." WHITE << std::endl;
 		return (false);
 	}
 
@@ -68,14 +68,14 @@ bool	BitcoinExchange::checkLine(std::string line){
 	bool		ok = true;
 
 	if (!checkDate(line.substr(0, line.find(' ')))){
-		std::cerr << "Error: invalid date => " << line.substr(0, line.find(' ')) << std::endl;
+		std::cerr << CYAN "Error: invalid date => " WHITE << line.substr(0, line.find(' ')) << std::endl;
 		ok = false;
 	}
 	else if (!checkValue(atof(line.substr(line.find_last_of(' ') + 1, line.length()).c_str()))){
 		ok = false;
 	}
 	else if (line.find('|') == std::string::npos){
-		std::cerr << "Error: invalid format." << std::endl;
+		std::cerr << CYAN "Error: invalid format." WHITE << std::endl;
 		ok = false;	
 	}
 
@@ -85,7 +85,7 @@ bool	BitcoinExchange::checkLine(std::string line){
 void	BitcoinExchange::exchange(std::string inputFile){
 	std::ifstream	file(inputFile.c_str());
 	if (!file.is_open()){
-		std::cerr << "Error: error opening input file." << std::endl;
+		std::cerr << CYAN "Error: error opening input file." WHITE << std::endl;
 		return ;
 	}
 
@@ -97,7 +97,7 @@ void	BitcoinExchange::exchange(std::string inputFile){
 			Date	date(line.substr(0, line.find(' ')).c_str());
 			float	value = atof(line.substr(line.find_last_of(' ') + 1, line.length()).c_str());
  			if (date < data.begin()->first || date > data.rbegin()->first)
-				std::cerr << "Error: date out of bounds." << std::endl;
+				std::cerr << CYAN "Error: date out of bounds." WHITE << std::endl;
 			else{
 				std::map<Date, float>::iterator	i = data.lower_bound(date);
 				if ((i->first != date || i == data.end()) && i != data.begin())
