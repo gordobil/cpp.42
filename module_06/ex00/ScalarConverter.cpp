@@ -57,7 +57,7 @@ void	ScalarConverter::convert(std::string param){
 		{
 			char	c = param[0];
 
-			if (c < 0 || c > 127)
+			if (c < 0)
 				std::cout << "char: impossible" << std::endl;
 			else if (isprint(c))
 				std::cout << "char: " << c << std::endl;
@@ -196,7 +196,7 @@ void	ScalarConverter::convert(std::string param){
 		}
 		default:
 		{
-			std::cout << "Invalid parameter, unable to cast." << std::endl;
+			std::cout << "Invalid parameter \"" << param << "\", unable to cast." << std::endl;
 			break ;
 		}
 	}
