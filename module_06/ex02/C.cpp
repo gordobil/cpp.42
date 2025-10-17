@@ -2,7 +2,7 @@
 #include "C.hpp"
 
 C::C(){
-	std::cout << "Class type 'C' randomly created." << std::endl;
+	std::cout << CYAN "Class type 'C' randomly created." WHITE << std::endl;
 }
 
 C::~C() {}
