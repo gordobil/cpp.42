@@ -54,7 +54,7 @@ void	identify(Base &p){
 		std::cout << "Class type 'A' identified without using pointers." << std::endl;
 		return ;
 	}
-	catch (const std::bad_cast &e){}
+	catch (const std::exception &e){}
 
 	try 
 	{
@@ -62,7 +62,7 @@ void	identify(Base &p){
 		std::cout << "Class type 'B' identified without using pointers." << std::endl;
 		return ;
 	}
-	catch (const std::bad_cast &e){}
+	catch (const std::exception &e){}
 
 	try 
 	{
@@ -70,5 +70,5 @@ void	identify(Base &p){
 		std::cout << "Class type 'C' identified without using pointers." << std::endl;
 		return ;
 	}
-	catch (const std::bad_cast &e){}
+	catch (const std::exception &e){}
 }

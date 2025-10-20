@@ -5,7 +5,7 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
-#include <typeinfo>
+#include <exception>
 
 # define RED	"\033[1;95m"
 # define CYAN	"\033[1;31m"

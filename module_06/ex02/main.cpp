@@ -7,4 +7,6 @@ int	main(void)
 
 	identify(randClass);
 	identify(*randClass);
+
+	delete randClass;
 }
