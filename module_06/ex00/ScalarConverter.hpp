@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string>
 #include <limits>
+#include <iomanip>
 
 # define RED	"\033[1;95m"
 # define CYAN	"\033[1;31m"

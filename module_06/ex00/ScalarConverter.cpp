@@ -71,7 +71,8 @@ void	ScalarConverter::convert(std::string param){
 		case 2:		/******************* INT *******************/
 		{
 			int		i = std::atoi(param.c_str());
-			double	limits = std::atof(param.c_str());
+			char	*endptr;
+			double	limits = std::strtod(param.c_str(), &endptr);
 
 			if (limits > std::numeric_limits<int>::max() || limits < std::numeric_limits<int>::min())
 			{
@@ -95,7 +96,8 @@ void	ScalarConverter::convert(std::string param){
 		case 3:		/****************** FLOAT ******************/
 		{
 			float	f = std::atof(param.c_str());
-			double	limits = std::atof(param.c_str());
+			char	*endptr;
+			double	limits = std::strtod(param.c_str(), &endptr);
 
 			if (limits > std::numeric_limits<float>::max() || limits < std::numeric_limits<float>::min())
 			{
@@ -112,7 +114,7 @@ void	ScalarConverter::convert(std::string param){
 				std::cout << "char: non displayable" << std::endl;
 
 		// int
-			if (f > (float)std::numeric_limits<int>::max() || f < (float)std::numeric_limits<int>::min())
+			if (f > static_cast<float>(std::numeric_limits<int>::max()) || f < static_cast<float>(std::numeric_limits<int>::min()))
 				std::cout << "int: impossible" << std::endl;
 			else
 				std::cout << "int: " << static_cast<int>(f) << std::endl;
@@ -151,7 +153,7 @@ void	ScalarConverter::convert(std::string param){
 				std::cout << "char: non displayable" << std::endl;
 
 		// int
-			if (d > (double)std::numeric_limits<int>::max() || d < (double)std::numeric_limits<int>::min())
+			if (d > static_cast<double>(std::numeric_limits<int>::max()) || d < static_cast<double>(std::numeric_limits<int>::min()))
 				std::cout << "int: impossible" << std::endl;
 			else
 				std::cout << "int: " << static_cast<int>(d) << std::endl;

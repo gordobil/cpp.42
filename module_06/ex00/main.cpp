@@ -13,6 +13,10 @@ int	main(int argc, char **argv)
 	}
 	else {
 		std::cout << std::endl;
+		std::cout << RED "   INVALID TEST:" WHITE << std::endl;
+		ScalarConverter::convert("abcde");
+		std::cout << CYAN "--------------------------------" WHITE << std::endl << std::endl;
+
 		std::cout << RED "   CHAR TESTS:" WHITE << std::endl;
 		ScalarConverter::convert("A");
 		std::cout << std::endl;
