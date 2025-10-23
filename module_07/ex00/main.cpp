@@ -32,7 +32,7 @@ void	complex(void){
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2 && (std::string)argv[1] == "intra")
+	if (argc == 2 && (std::string)argv[1] == "complex")
 		complex();
 	else {
 		int			n1 = 5;
