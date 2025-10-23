@@ -21,7 +21,7 @@ class Awesome
 };
 std::ostream	&operator<<(std::ostream &o, const Awesome &a) {o << a.get_n(); return (o);}
 
-void	intra_main(void){
+void	complex(void){
 	Awesome	a(2), b(4);
 
 	swap (a, b);
@@ -33,7 +33,7 @@ void	intra_main(void){
 int	main(int argc, char **argv)
 {
 	if (argc == 2 && (std::string)argv[1] == "intra")
-		intra_main();
+		complex();
 	else {
 		int			n1 = 5;
 		int			n2 = 8;
