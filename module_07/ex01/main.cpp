@@ -3,26 +3,36 @@
 
 class Awesome
 {
-	private:
-		int _n;
-
-	public:
-		Awesome(void) : _n(42) {return ;}
-		int	get(void)const {return (this->_n);}
+  public:
+    Awesome( void ) : _n( 42 ) { return; }
+    int get( void ) const { return this->_n; }
+  private:
+    int _n;
 };
-std::ostream	&operator<<(std::ostream &o, const Awesome &rhs) {o << rhs.get(); return (o);}
 
-template <typename T>
-void	print(const T &x) {std::cout << x << std::endl; return ;}
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs )
+{
+  o << rhs.get();
+  return o;
+}
 
-int	complex(void){
-	int		tab[] = {0, 1, 2, 3, 4};
-	Awesome	tab2[5];
+template< typename T >
+void print( T& x )
+{
+  std::cout << x << std::endl;
+  return;
+}
 
-	iter(tab, 5, print);
-	iter(tab2, 5, print);
+int complex() {
+  int tab[] = { 0, 1, 2, 3, 4 };
+  Awesome tab2[5];
 
-	return (0);
+  const int len = 5;
+
+  iter( tab, len, print<const int> );
+  iter( tab2, len, print<Awesome> );
+
+  return 0;
 }
 
 int	main(int argc, char **argv)
@@ -35,15 +45,15 @@ int	main(int argc, char **argv)
 	char		c[] = {'a', 'b', 'c', 'd', 'e'};
 
 	std::cout << RED "INT:" WHITE << std::endl;
-	::iter(n, 5, print_values);
+	::iter(n, 5, print_values<int>);
 	std::cout << std::endl;
 
 	std::cout << RED "STRING:" WHITE << std::endl;
-	::iter(s, 5, print_values);
+	::iter(s, 5, print_values<std::string>);
 	std::cout << std::endl;
 
 	std::cout << RED "CHAR:" WHITE << std::endl;
-	::iter(c, 5, print_values);
+	::iter(c, 5, print_values<char>);
 
 	return (0);
 }

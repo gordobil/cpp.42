@@ -10,8 +10,8 @@ void	print_values(T const &p){
 	std::cout << p << std::endl;
 }
 
-template <typename T>
-void	iter(T *ptr, unsigned int size, void(*f)(T const &)){
+template <typename T, typename ft>
+void	iter(T *ptr, unsigned int size, ft f){
 	for (unsigned int i = 0; i < size; i++)
 		f(ptr[i]);
 }
