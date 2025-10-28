@@ -1,29 +1,41 @@
 
 #include "Span.hpp"
 
-void	tenThousandNumbers(){
-	int		amount = 10000;
+bool	isdigitstr(char *str){
+	for (int i = 0; str[i] != '\0'; i++){
+		if (!isdigit(str[i]))
+			return (false);
+	}
+	return (true);
+}
+
+int	randomNumbers(int amount){
 	Span	c(amount);
 
 	std::srand(time(NULL));
 	try {
-		std::cout << RED " ¬ 10000 NUMBERS:" WHITE << std::endl;
+		std::cout << std::endl << RED << " ¬ " << amount << " NUMBERS:" WHITE << std::endl;
 		for (int i = 0; i < amount; i++)
 			c.addNumber(std::rand());
 		std::cout << CYAN "longestSpan=" WHITE << c.longestSpan() << std::endl;
-		std::cout << CYAN "shortestSpan=" WHITE << c.shortestSpan() << std::endl;
+		std::cout << CYAN "shortestSpan=" WHITE << c.shortestSpan() << std::endl << std::endl;
 	}
 	catch (const std::exception &e){
-		std::cerr << e.what() <<std::endl;
+		std::cerr << e.what() <<std::endl << std::endl;
 	}
+
+	return (0);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
+	if (argc == 2 && isdigitstr(argv[1]))
+		return (randomNumbers(atoi(argv[1])));
+
 	Span	c(10);
 
 	try {
-		std::cout << RED " ¬ EMPTY:" WHITE << std::endl;
+		std::cout << std::endl << RED " ¬ EMPTY:" WHITE << std::endl;
 		c.longestSpan();
 	}
 	catch (const std::exception &e){
@@ -51,8 +63,6 @@ int	main(void)
 	catch (const std::exception &e){
         std::cerr << e.what() << std::endl << std::endl;
 	}
-
-	tenThousandNumbers();
 
 	return (0);
 }
