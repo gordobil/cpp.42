@@ -1,6 +1,14 @@
 
 #include "MutantStack.hpp"
 
+bool	isdigitstr(char *str){
+	for (int i = 0; str[i] != '\0'; i++){
+		if (!isdigit(str[i]))
+			return (false);
+	}
+	return (true);
+}
+
 int	subject_main(void)
 {
 	MutantStack<int> mstack;
@@ -33,10 +41,10 @@ int	main(int argc, char **argv)
 
 	if (argc == 2 && (std::string)argv[1] == "subject")
 		return (subject_main());
-	else if (argc == 3 && (std::string)argv[1] == "random" && !isdigit(atoi(argv[2])))
+	else if (argc == 2 && isdigitstr(argv[1]))
 	{
 		std::srand(time(NULL));
-		for (int i = 0; i < atoi(argv[2]); i++)
+		for (int i = 0; i < atoi(argv[1]); i++)
 			ms.push(std::rand());
 	}
 	else
