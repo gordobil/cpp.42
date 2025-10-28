@@ -12,7 +12,7 @@ int	main(void)
 	v.push_back(1);
 	v.push_back(2);
 	v.push_back(3);
-	easyfind(v, 4);
+	easyfind(v, 2);
 	std::cout << std::endl;
 
 	std::cout << RED " ¬ DEQUE:" WHITE << std::endl;
