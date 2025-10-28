@@ -33,12 +33,12 @@ void	Span::addNumber(int n){
 	if (container.size() < max)
 		container.push_back(n);
 	else
-		throw ExceptionMessage("Not enough space in container.");
+		throw std::runtime_error("Not enough space in container.");
 }
 
 int	Span::longestSpan(void)const{
 	if (container.size() < 2)
-		throw ExceptionMessage("Not enough elements to compare.");
+		throw std::runtime_error("Not enough elements to compare.");
 
 	int	maxN = *std::max_element(container.begin(), container.end());
 	int	minN = *std::min_element(container.begin(), container.end());
@@ -47,7 +47,7 @@ int	Span::longestSpan(void)const{
 
 int	Span::shortestSpan(void)const{
 	if (container.size() < 2)
-		throw ExceptionMessage("Not enough elements to compare.");
+		throw std::runtime_error("Not enough elements to compare.");
 
 	int	minSpan;
 	if (container[0] > container[1])
@@ -63,9 +63,4 @@ int	Span::shortestSpan(void)const{
 			minSpan = container[i + 1] - container[i];
 	}
 	return (minSpan);
-}
-
-// EXCEPTIONS
-const char	*Span::ExceptionMessage::what() const throw(){
-	return (error);
 }

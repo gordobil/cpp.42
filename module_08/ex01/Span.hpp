@@ -32,16 +32,6 @@ class Span
 		void				addNumber(int n);
 		int					longestSpan(void)const;
 		int					shortestSpan(void)const;
-
-		//EXCEPTIONS
-		class ExceptionMessage: public std::exception{
-			private:
-				const char	*error;
-			public:
-				ExceptionMessage(const char *mss){
-					error = mss;}
-				const char	*what() const throw();
-		};
 };
 
 #endif
