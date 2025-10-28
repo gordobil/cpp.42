@@ -16,7 +16,7 @@ int	randomNumbers(int amount){
 	try {
 		std::cout << std::endl << RED << " ¬ " << amount << " NUMBERS:" WHITE << std::endl;
 		for (int i = 0; i < amount; i++)
-			c.addNumber(std::rand());
+			c.addNumber(std::rand() % amount + 1);
 		std::cout << CYAN "longestSpan=" WHITE << c.longestSpan() << std::endl;
 		std::cout << CYAN "shortestSpan=" WHITE << c.shortestSpan() << std::endl << std::endl;
 	}

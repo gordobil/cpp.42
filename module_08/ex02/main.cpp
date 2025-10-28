@@ -45,7 +45,7 @@ int	main(int argc, char **argv)
 	{
 		std::srand(time(NULL));
 		for (int i = 0; i < atoi(argv[1]); i++)
-			ms.push(std::rand());
+			ms.push(std::rand() % atoi(argv[1]) + 1);
 	}
 	else
 	{

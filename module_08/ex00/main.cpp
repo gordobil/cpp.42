@@ -40,7 +40,7 @@ int	main(void)
 	std::cout << RED "* CHAR:" WHITE << std::endl;
 	c.push_back('A');
 	c.push_back('B');
-	c.push_back('C');
+	c.push_back('C');	
 	easyfind(c, 'B');
 
 	return (0);
