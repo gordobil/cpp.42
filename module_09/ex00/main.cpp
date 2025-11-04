@@ -4,15 +4,20 @@
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
-		return (std::cerr << "Error: error opening input file." << std::endl, 1);
-	
-	BitcoinExchange	bitcoins("data.csv");
-	for (int i = 1; i < argc; i++){
-		std::cout << RED " ¬ File: " WHITE << argv[i] << std::endl;
-		bitcoins.exchange(argv[i]);
-		if (i != argc - 1)
-			std::cout << std::endl;
+		return (std::cerr << CYAN "Error: missing input file." WHITE << std::endl, 1);
+
+	try{
+		BitcoinExchange	bitcoins("data.csv");
+
+		for (int i = 1; i < argc; i++){
+			std::cout << RED " ¬ Input file: " WHITE << argv[i] << std::endl;
+			bitcoins.exchange(argv[i]);
+			if (i != argc - 1)
+				std::cout << std::endl;
+		}
 	}
+	catch (std::exception &e){
+		std::cout << e.what() << std::endl;}
 
 	return (0);
 }

@@ -4,7 +4,7 @@
 BitcoinExchange::BitcoinExchange(std::string newData){
 	std::ifstream	file(newData.c_str());
 	if (!file.is_open())
-		throw	std::runtime_error("Error: error opening exchange rates file.");
+		throw	std::runtime_error(RED " ¬ Exchange rates file: " WHITE + newData + CYAN "\nError: error opening exchange rates file.");
 	
 	std::string	line;
 	std::getline(file, line);
@@ -65,21 +65,18 @@ bool	BitcoinExchange::checkDate(std::string date){
 }
 
 bool	BitcoinExchange::checkLine(std::string line){
-	bool		ok = true;
-
 	if (!checkDate(line.substr(0, line.find(' ')))){
 		std::cerr << CYAN "Error: invalid date => " WHITE << line.substr(0, line.find(' ')) << std::endl;
-		ok = false;
+		return (false);
 	}
 	else if (!checkValue(atof(line.substr(line.find_last_of(' ') + 1, line.length()).c_str()))){
-		ok = false;
+		return (false);
 	}
 	else if (line.find('|') == std::string::npos){
 		std::cerr << CYAN "Error: invalid format." WHITE << std::endl;
-		ok = false;	
+		return (false);
 	}
-
-	return (ok);
+	return (true);
 }
 
 void	BitcoinExchange::exchange(std::string inputFile){
