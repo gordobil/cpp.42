@@ -52,10 +52,10 @@ void	PmergeMe::getNumbers(char **args){
 	{
 		for (int j = 0; args[i][j] != '\0'; j++){
 			if (!isdigit(args[i][j]))
-				throw std::runtime_error("Error: invalid argument.");
+				throw std::runtime_error("Invalid argument.");
 		}
 		if (atol(args[i]) > std::numeric_limits<int>::max())
-			throw std::runtime_error("Error: number out of limits.");
+			throw std::runtime_error("Number out of limits.");
 		vNum.push_back(atoi(args[i]));
 		dNum.push_back(atoi(args[i]));
 	}
