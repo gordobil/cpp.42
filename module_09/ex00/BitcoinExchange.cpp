@@ -58,7 +58,7 @@ bool	BitcoinExchange::checkDate(std::string date){
 		return (false);
 	if (d < 1 || d > maxDays[m])
 		return (false);
-	if (m == 2 && d == 28 && (y % 4 != 0 || (y % 100 == 0 && y % 400 != 0)))
+	if (m == 2 && d == 29 && (y % 4 != 0 || (y % 100 == 0 && y % 400 != 0)))
 		return (false);
 
 	return (true);
