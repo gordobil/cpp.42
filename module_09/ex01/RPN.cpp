@@ -42,7 +42,7 @@ int	RPN::calculateRPN(std::string arg){
 			numbers.pop();
 			int	tempA = numbers.top();
 			numbers.pop();
-			if (*i == '/' && tempA == 0)
+			if (*i == '/' && tempB == 0)
 				throw std::runtime_error("Can't divide by 0.");
 			numbers.push(getAnswer(tempA, tempB, *i));
 		}
