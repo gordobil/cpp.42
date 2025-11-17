@@ -138,3 +138,13 @@ std::ostream	&operator<<(std::ostream &out, const std::deque<int> &deq){
 	}
 	return (out);
 }
+
+template <typename Container>
+void	print_sequence(const Container &cont){
+	for (typename Container::const_iterator i = cont.begin(); i != cont.end(); i++){
+		std::cout << *i;
+		if (i + 1 != cont.end())
+			std::cout << " ";
+	}
+	std::cout << std::endl;
+}

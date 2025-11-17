@@ -51,5 +51,7 @@ class PmergeMe
 std::ostream	&operator<<(std::ostream &out, const PmergeMe &pmergeMe);
 std::ostream	&operator<<(std::ostream &out, const std::vector<int> &vec);
 std::ostream	&operator<<(std::ostream &out, const std::deque<int> &deq);
+template <typename Container>
+void			print_sequence(const Container &cont);
 
 #endif
